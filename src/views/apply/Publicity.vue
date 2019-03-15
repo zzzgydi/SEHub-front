@@ -8,7 +8,7 @@
           <el-input v-model="applyForm.actname" class="apy-input-normal"></el-input>
         </el-form-item>
         <el-form-item label="活动地点">
-          <el-input v-model="applyForm.actname" class="apy-input-normal"></el-input>
+          <el-input v-model="applyForm.actaddr" class="apy-input-normal"></el-input>
         </el-form-item>
         <el-form-item label="活动时间">
           <el-date-picker v-model="applyForm.acttime" type="date" value-format="yyyy-MM-dd"></el-date-picker>
