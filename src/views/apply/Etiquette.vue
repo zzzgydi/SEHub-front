@@ -1,5 +1,7 @@
 <template>
-  <div>礼仪队</div>
+  <div>
+    <div>礼仪队</div>
+  </div>
 </template>
 <script>
 export default {

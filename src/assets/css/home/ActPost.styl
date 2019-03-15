@@ -1,0 +1,52 @@
+img_width = 120px
+img_max_height = img_width * 1.4135 
+desc_margin_left = 5px
+desc_width = img_width / 10 * 14 - desc_margin_left
+box_padding = 10px
+box_margin_right = 20px
+box_width = img_width + desc_width + 2*(box_padding) - 10px
+box_height = img_max_height
+
+.actp-each-box
+  width box_width
+  height box_height
+  padding box_padding 0px box_padding box_padding
+  margin-right box_margin_right
+  margin-bottom 30px
+  border solid 1px #aaa
+  border-radius 16px
+  &:hover
+    box-shadow 1.5px 1.5px 1px 1px #ddd
+
+.actp-img
+  width img_width
+  max-height img_max_height
+  border-radius: 6px
+
+.actp-desc-box
+  width desc_width
+  margin-left: desc_margin_left
+
+.actp-desc-title
+  width desc_width
+  height 44px
+  font-size 18px
+  line-height 22px
+  word-wrap break-word
+  overflow hidden
+
+.actp-desc-detail
+  margin-top 11px
+  font-size 13px
+  color #777
+  .actp-desc-detail-each
+    height 15px
+    line-height 15px
+    overflow hidden
+
+.actp-desc-more
+  height 64px
+  font-size 14px
+  margin-top 5px
+  line-height 16px
+  overflow hidden

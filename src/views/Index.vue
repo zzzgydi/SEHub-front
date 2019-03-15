@@ -1,14 +1,17 @@
 <template>
-  <el-row class="container">
-    <el-col :span="4">
-      <side-bar></side-bar>
-    </el-col>
-    <el-col :span="20">
-      <router-view></router-view>
-    </el-col>
-  </el-row>
+  <div class="container">
+    <el-row>
+      <el-col :span="4">
+        <side-bar></side-bar>
+      </el-col>
+      <el-col :span="20">
+        <keep-alive>
+          <router-view></router-view>
+        </keep-alive>
+      </el-col>
+    </el-row>
+  </div>
 </template>
-
 <script>
 import SideBar from '../components/SideBar'
 export default {
@@ -18,7 +21,11 @@ export default {
 
   data () {
     return {
-      hello: '你好'
+    }
+  },
+  beforeCreate () {
+    if (this.$route.path === '/') {
+      this.$router.push('home')
     }
   }
 }
@@ -26,6 +33,10 @@ export default {
 
 <style lang="stylus" scoped>
 .container {
-  min-width: 1000px;
+  min-width: 1150px;
+}
+
+.sbar {
+  min-width: 200px;
 }
 </style>

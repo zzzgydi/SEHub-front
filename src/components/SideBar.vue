@@ -1,5 +1,5 @@
 <template>
-  <div class="side-bar" :style="'height:'+screenHeight+'px;'">
+  <div class="side-bar">
     <div class="sbar-avatar-container">
       <div class="sbar-avatar">
         <img :src="avatar" alt class="sbar-img">
@@ -44,6 +44,11 @@ import HeadAvatar from '../assets/img/tmp2.jpg'
 // 模拟从后端传来的数据
 const simulateData = [
   {
+    title: '活动申请',
+    index: '3-0',
+    permission: true,
+    route: '/apply/activity'
+  }, {
     title: '秘书部物资申请',
     index: '3-1',
     permission: true,
@@ -94,6 +99,7 @@ export default {
           this.$router.push('/work')
           break
         case '4':
+          this.$router.push('/others')
           break
         default:
           this.submenuList.forEach(item => {
@@ -108,7 +114,7 @@ export default {
     const that = this
     window.onresize = () => {
       return (() => {
-        that.screenHeight = window.innerHeight
+        that.screenHeight = window.innerHeight > document.body.offsetHeight ? window.innerHeight : document.body.offsetHeight
       })()
     }
   }
@@ -121,8 +127,7 @@ img-border = 2px;
 imgcon-width = img-width + 2 * img-border;
 
 .side-bar {
-  height: 100%;
-  border-right: solid 1px #ddd;
+  // border-right: solid 1px #000;
 }
 
 .sbar-avatar-container {
@@ -140,8 +145,7 @@ imgcon-width = img-width + 2 * img-border;
 .sbar-menu {
   border-right: solid 0 #fff;
   width: 88%;
-  margin-left: 6%;
-  margin-top: 80px;
+  margin: 80px auto;
 }
 
 /* .sbar-footer {

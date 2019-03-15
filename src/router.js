@@ -4,6 +4,8 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
+  base: process.env.BASE_URL,
   routes: [{
     path: '/',
     name: 'index',
@@ -14,6 +16,12 @@ export default new Router({
     }, {
       path: '/work',
       component: () => import('./views/Work.vue')
+    }, {
+      path: '/others',
+      component: () => import('./views/Others.vue')
+    }, {
+      path: '/apply/activity',
+      component: () => import('./views/apply/Activity.vue')
     }, {
       path: '/apply/etiquette',
       component: () => import('./views/apply/Etiquette.vue')
@@ -33,5 +41,8 @@ export default new Router({
       path: '/apply/ticket',
       component: () => import('./views/apply/Ticket.vue')
     }]
+  }, {
+    path: '/regsys',
+    component: () => import('./views/detail/RegSys.vue')
   }]
 })
