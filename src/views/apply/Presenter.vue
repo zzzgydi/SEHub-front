@@ -33,11 +33,19 @@
           </el-form>
         </div>
       </el-main>
-      <el-main></el-main>
+      <el-main>
+        <div class="apy-matter-container">
+          <div class="apy-matter-title">注意事项</div>
+          <div v-for="(matter,idx) in matters" :key="idx" class="apy-matter-each">
+            <span>{{idx+1}}.&emsp;{{matter}}</span>
+          </div>
+        </div>
+      </el-main>
     </el-container>
   </div>
 </template>
 <script>
+import { matterPresenter } from '../../assets/js/apply/matters.js'
 export default {
   data () {
     return {
@@ -48,7 +56,8 @@ export default {
         rehtime: '', // 彩排时间
         number: '',
         others: ''
-      }
+      },
+      matters: matterPresenter
     }
   }
 }

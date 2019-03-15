@@ -5,22 +5,42 @@
 //   border-bottom solid 1px red
 //   font-size 24px
 
+
+
+apy_form_width = 550px
+apy_matter_width = 280px
+
+
 .apy-container
+  width apy_form_width + apy_matter_width + 160px
+  margin 10px auto
   .el-container
   .el-main
     margin 0
     padding 0
 
 
-
-
-apy_form_width = 550px
 .apy-form-container
   width apy_form_width
   padding 40px 42px 40px 10px
-  margin 10px auto
+  //margin 10px auto
   border 0.5px solid #aaaaaa
   border-radius 20px
+
+// 注意事项的样式
+.apy-matter-container
+  width apy_matter_width
+  padding 30px 15px 20px 20px
+  border 0.5px solid #ccc
+  border-radius 20px
+  color: #909399
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  .apy-matter-title
+    font-size 20px
+    color #606266
+    padding-bottom 6px
+  .apy-matter-each
+    margin-bottom 6px
 
 .apy-form-dashed
   width: 100%
@@ -79,3 +99,4 @@ btn_box_margin = (apy_form_width - btn_box_width)/2+22px
 
 .apy-pub-form-btn
   margin-left 220px
+
