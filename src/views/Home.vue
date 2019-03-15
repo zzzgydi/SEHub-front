@@ -22,12 +22,10 @@
   </div>
 </template>
 <script>
-import SimpleHeader from '../components/SimpleHeader.vue'
 import ActPost from '../components/home/ActPost.vue'
 export default {
   components: {
-    'act-post': ActPost,
-    'simple-header': SimpleHeader
+    'act-post': ActPost
   },
   data () {
     return {

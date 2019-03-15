@@ -1,6 +1,8 @@
 <!-- 宣传物资申请 -->
 <template>
-  <div>宣传物资申请</div>
+  <div>
+    <simple-header title="宣传物资申请"></simple-header>
+  </div>
 </template>
 <script>
 export default {

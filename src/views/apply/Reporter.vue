@@ -1,6 +1,8 @@
 <!--记者团申请-->
 <template>
-  <div>记者团申请</div>
+  <div>
+    <simple-header title="记者团申请"></simple-header>
+  </div>
 </template>
 <script>
 export default {

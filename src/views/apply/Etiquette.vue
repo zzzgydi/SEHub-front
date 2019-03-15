@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div>礼仪队</div>
+    <simple-header title="礼仪队"></simple-header>
+    <div></div>
   </div>
 </template>
 <script>

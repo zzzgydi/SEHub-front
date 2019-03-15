@@ -55,7 +55,7 @@
           </el-tooltip>
         </el-form-item>
         <el-form-item label="添加附件">
-          <el-upload>
+          <el-upload action>
             <div class="apy-upload-box">
               <i class="el-icon-circle-plus-outline"></i>
             </div>
@@ -71,11 +71,7 @@
 </template>
 
 <script>
-import SimpleHeader from '../../components/SimpleHeader.vue'
 export default {
-  components: {
-    'simple-header': SimpleHeader
-  },
   data () {
     return {
       applyForm: {
