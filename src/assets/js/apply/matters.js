@@ -12,10 +12,15 @@ const publicity = [
   '海报上的文字尽量一次性确定，否则做海报的同学可能需要重新排版很耗时间',
   '如果申请表的要求在实际操作中存在困难，我们会及时反馈',
   '如果有任何疑惑，如对海报大小不了解，可联系宣传部部长刘林炙，电话：15521437202，QQ: 251326684'
+]
 
+const etiquette = [
+  '请提前5个工作日提交申请',
+  '如有任何疑问，请咨询：陈若邻 - 15918879355, QQ: 976950078'
 ]
 
 module.exports = {
   matterPresenter: presenter,
-  matterPublicity: publicity
+  matterPublicity: publicity,
+  matterEtiquette: etiquette
 }
