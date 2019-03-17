@@ -5,7 +5,13 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    permission: {}
+    isLogin: false,
+    user: {},
+    permission: {},
+    activities: {
+      ongoing: [],
+      preparing: []
+    }
   },
   mutations: {
 

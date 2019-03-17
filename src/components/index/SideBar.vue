@@ -12,7 +12,7 @@
       </el-menu-item>
       <el-menu-item index="2">
         <i class="el-icon-location-outline"></i>
-        <span slot="title">部门首页</span>
+        <span slot="title">部门安排</span>
       </el-menu-item>
       <el-submenu index="3">
         <template slot="title">
