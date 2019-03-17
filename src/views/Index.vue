@@ -13,7 +13,7 @@
   </div>
 </template>
 <script>
-import SideBar from '../components/SideBar'
+import SideBar from '../components/index/SideBar'
 export default {
   components: {
     'side-bar': SideBar

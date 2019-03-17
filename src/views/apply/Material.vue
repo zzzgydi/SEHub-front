@@ -12,20 +12,36 @@
             <el-form-item label="活动地点">
               <el-input v-model="applyForm.actaddr" class="apy-input-normal"></el-input>
             </el-form-item>
-            <el-form-item label="活动时间">
-              <el-date-picker v-model="applyForm.acttime" type="date" value-format="yyyy-MM-dd"></el-date-picker>
+            <el-form-item label="借用时间">
+              <el-date-picker v-model="applyForm.lendtime" type="date" value-format="yyyy-MM-dd"></el-date-picker>
             </el-form-item>
-            <el-form-item label="申请人数">
-              <el-input v-model="applyForm.number" class="apy-input-normal"></el-input>
+            <el-form-item label="归还时间">
+              <el-date-picker v-model="applyForm.backtime" type="date" value-format="yyyy-MM-dd"></el-date-picker>
             </el-form-item>
-            <el-form-item label="礼仪工作">
-              <el-checkbox-group v-model="applyForm.etiwork">
-                <el-checkbox label="颁奖">颁奖</el-checkbox>
-                <el-checkbox label="引导">引导</el-checkbox>
-                <el-checkbox label="迎宾签到">迎宾签到</el-checkbox>
-                <el-checkbox label="其他">其他</el-checkbox>
-              </el-checkbox-group>
+            <div class="apy-form-dashed"></div>
+            <el-form-item
+              v-for="(need,index) in applyForm.needs"
+              :label="'物资'+(index+1)"
+              :key="index"
+            >
+              <el-input v-model="need.name" class="apy-input-medium"></el-input>
+              <span>&emsp;&emsp;数量&ensp;</span>
+              <el-input v-model="need.num" class="apy-pub-input-mini"></el-input>
+              <span>&emsp;</span>
+              <el-button
+                type="danger"
+                icon="el-icon-delete"
+                circle
+                size="mini"
+                @click="delApyNeeds(index)"
+              ></el-button>
             </el-form-item>
+            <el-button class="apy-pub-form-btn" type="primary" plain @click="addApyNeeds">
+              添加物资需求
+              <i class="el-icon-circle-plus-outline"></i>
+            </el-button>
+            <div class="apy-form-dashed" style="margin-top: 20px;"></div>
+
             <el-form-item label="备注">
               <el-input
                 type="textarea"
@@ -50,15 +66,32 @@
   </div>
 </template>
 <script>
+import { matterMaterials } from '../../assets/js/const/matters.js'
 export default {
   data () {
     return {
       applyForm: {
-        actname: ''
-      }
+        actname: '',
+        actaddr: '',
+        lendtime: '',
+        backtime: '',
+        needs: [{
+          name: '',
+          num: ''
+        }]
+      },
+      matters: matterMaterials
+    }
+  },
+  methods: {
+    addApyNeeds () {
+      this.applyForm.needs.push({ name: '', num: '' })
+    },
+    delApyNeeds (index) {
+      this.applyForm.needs.splice(index, 1)
     }
   }
 }
 </script>
 
-<style scoped lang="stylus" src="../../assets/css/apply.styl"></style>
+<style scoped lang="stylus" src="../../assets/css/apply/apply.styl"></style>

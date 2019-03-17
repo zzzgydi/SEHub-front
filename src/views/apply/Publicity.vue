@@ -119,7 +119,7 @@
   </div>
 </template>
 <script>
-import { matterPublicity } from '../../assets/js/apply/matters.js'
+import { matterPublicity } from '../../assets/js/const/matters.js'
 export default {
   data () {
     return {
@@ -153,6 +153,6 @@ export default {
   }
 }
 </script>
-<style scoped lang="stylus" src="../../assets/css/apply.styl"></style>
+<style scoped lang="stylus" src="../../assets/css/apply/apply.styl"></style>
 <style lang="stylus" scoped>
 </style>

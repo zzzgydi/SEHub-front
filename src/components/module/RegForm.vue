@@ -47,6 +47,6 @@ export default {
   }
 }
 </script>
-<style lang="stylus" scoped src="../../assets/css/module/register.styl"></style>
+<style lang="stylus" scoped src="../../assets/css/module/RegForm.styl"></style>
 <style lang="stylus" scoped>
 </style>

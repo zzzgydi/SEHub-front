@@ -1,5 +1,5 @@
 <template>
-  <div class="actp-each-box">
+  <div class="actp-each-box" @click="clickAct">
     <el-row>
       <el-col :span="10" class="actp-img-box">
         <img class="actp-img" src="../../../public/timg_1.jpg" alt="海报">
@@ -23,6 +23,15 @@ export default {
   data () {
     return {
 
+    }
+  },
+  methods: {
+    clickAct () {
+      if (this.activity.id) {
+        this.$router.push('/home/eachact/' + this.activity.id)
+      }
+      console.log('click')
+      console.log(this.activity)
     }
   }
 }

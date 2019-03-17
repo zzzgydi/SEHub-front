@@ -22,7 +22,7 @@
   </div>
 </template>
 <script>
-import ActPost from '../components/home/ActPost.vue'
+import ActPost from '../../components/home/ActPost.vue'
 export default {
   components: {
     'act-post': ActPost
@@ -30,6 +30,7 @@ export default {
   data () {
     return {
       publicActList: [{
+        id: '122',
         poster: '',
         title: '这是一个题目旨在什么什么什么什么什么1',
         hostunit: 'XXX部',
@@ -80,4 +81,4 @@ export default {
 
 }
 </script>
-<style lang="stylus" scoped src="../assets/css/Home.styl"></style>
+<style lang="stylus" scoped src="../../assets/css/home/Home.styl"></style>

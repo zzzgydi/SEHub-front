@@ -17,7 +17,7 @@
       <el-submenu index="3">
         <template slot="title">
           <i class="el-icon-tickets"></i>
-          <span>工作安排</span>
+          <span>工作申请</span>
         </template>
         <el-menu-item
           v-for="item in submenuList"
@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import HeadAvatar from '../assets/img/tmp2.jpg'
+import HeadAvatar from '../../assets/img/tmp2.jpg'
 
 // 模拟从后端传来的数据
 const simulateData = [
@@ -49,25 +49,15 @@ const simulateData = [
     permission: true,
     route: '/apply/activity'
   }, {
-    title: '秘书部物资申请',
-    index: '3-1',
-    permission: true,
-    route: '/apply/material'
-  }, {
     title: '讲座票申请',
     index: '3-2',
     permission: true,
     route: '/apply/ticket'
   }, {
-    title: '宣传物资申请',
-    index: '3-3',
-    permission: true,
-    route: '/apply/publicity'
-  }, {
-    title: '记者团预约',
+    title: '新媒体申请',
     index: '3-4',
     permission: true,
-    route: '/apply/reporter'
+    route: '/apply/newmedia'
   }, {
     title: '主持人申请',
     index: '3-5',
@@ -78,6 +68,16 @@ const simulateData = [
     index: '3-6',
     permission: true,
     route: '/apply/etiquette'
+  }, {
+    title: '宣传物资申请',
+    index: '3-3',
+    permission: true,
+    route: '/apply/publicity'
+  }, {
+    title: '秘书物资申请',
+    index: '3-1',
+    permission: true,
+    route: '/apply/material'
   }
 ]
 

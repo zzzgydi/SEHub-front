@@ -109,7 +109,7 @@
 </template>
 
 <script>
-import RegForm from '../../components/others/RegForm.vue'
+import RegForm from '../../components/module/RegForm.vue'
 export default {
   components: {
     'reg-form': RegForm
@@ -142,5 +142,5 @@ export default {
   }
 }
 </script>
-<style lang="stylus" scoped src="../../assets/css/home/RegSys.styl">
+<style lang="stylus" scoped src="../../assets/css/module/RegSys.styl">
 </style>

@@ -12,13 +12,16 @@ export default new Router({
     component: () => import('./views/Index.vue'),
     children: [{
       path: '/home',
-      component: () => import('./views/Home.vue')
+      component: () => import('./views/home/Home.vue')
+    }, {
+      path: '/home/eachact/:id',
+      component: () => import('./views/home/EachAct.vue')
     }, {
       path: '/work',
-      component: () => import('./views/Work.vue')
+      component: () => import('./views/second/Work.vue')
     }, {
       path: '/others',
-      component: () => import('./views/Others.vue')
+      component: () => import('./views/others/Others.vue')
     }, {
       path: '/apply/activity',
       component: () => import('./views/apply/Activity.vue')
@@ -40,9 +43,12 @@ export default new Router({
     }, {
       path: '/apply/ticket',
       component: () => import('./views/apply/Ticket.vue')
+    }, {
+      path: '/apply/newmedia',
+      component: () => import('./views/apply/Newmedia.vue')
     }]
   }, {
-    path: '/regsys',
-    component: () => import('./views/detail/RegSys.vue')
+    path: '/module/regsys',
+    component: () => import('./views/module/RegSys.vue')
   }]
 })

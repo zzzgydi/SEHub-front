@@ -5,7 +5,7 @@ import VueAxios from 'vue-axios'
 import router from './router'
 import store from './store'
 import './plugins/element.js'
-import SimpleHeader from './components/SimpleHeader'
+import SimpleHeader from './components/index/SimpleHeader'
 
 Vue.config.productionTip = false
 
