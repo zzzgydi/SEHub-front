@@ -14,7 +14,10 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-
+    login (state) {
+      state.isLogin = true
+      console.log('store login')
+    }
   },
   actions: {
 

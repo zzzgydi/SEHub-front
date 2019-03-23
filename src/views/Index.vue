@@ -19,13 +19,13 @@ export default {
     'side-bar': SideBar
   },
 
-  data () {
-    return {
-    }
-  },
-  beforeCreate () {
+  beforeMount () {
     if (this.$route.path === '/') {
-      this.$router.push('home')
+      if (this.$store.state.isLogin) {
+        this.$router.push('home')
+      } else {
+        this.$router.push('login')
+      }
     }
   }
 }
@@ -34,6 +34,9 @@ export default {
 <style lang="stylus" scoped>
 .container {
   min-width: 1150px;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
 }
 
 .sbar {

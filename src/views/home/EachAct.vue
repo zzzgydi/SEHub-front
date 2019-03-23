@@ -11,8 +11,14 @@ export default {
     }
   },
   methods: {
-    hh () {
 
+  },
+  beforeMount () {
+    let id = this.$route.params.id
+    if (id) {
+      console.log(id)
+    } else {
+      console.log('error')
     }
   }
 }

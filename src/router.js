@@ -7,6 +7,9 @@ export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [{
+    path: '/login',
+    component: () => import('./views/Login.vue')
+  }, {
     path: '/',
     name: 'index',
     component: () => import('./views/Index.vue'),

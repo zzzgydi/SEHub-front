@@ -3,8 +3,16 @@
     <simple-header title="学院活动"></simple-header>
     <el-container>
       <div class="act-container">
+        <div class="act-label">█&emsp;正在进行</div>
+        <el-row v-if="isOngoing">
+          <el-col :span="8" v-for="(eachAct,index) in activities.ongoing" :key="index">
+            <act-post :activity="eachAct"></act-post>
+          </el-col>
+        </el-row>
+        <div v-else>无</div>
+        <div class="act-label">█&emsp;正在筹备</div>
         <el-row>
-          <el-col :span="8" v-for="(eachAct,index) in publicActList" :key="index">
+          <el-col :span="8" v-for="(eachAct,index) in activities.preparing" :key="index">
             <act-post :activity="eachAct"></act-post>
           </el-col>
         </el-row>
@@ -12,7 +20,7 @@
       <el-container class="act-timeline">
         <el-timeline>
           <el-timeline-item
-            v-for="(activity, index) in activities2"
+            v-for="(activity, index) in activities.timelines"
             :key="index"
             :timestamp="activity.timestamp"
           >{{activity.content}}</el-timeline-item>
@@ -23,62 +31,33 @@
 </template>
 <script>
 import ActPost from '../../components/home/ActPost.vue'
+import { apiGetActivities } from '../../api/home.js'
 export default {
   components: {
     'act-post': ActPost
   },
   data () {
     return {
-      publicActList: [{
-        id: '122',
-        poster: '',
-        title: '这是一个题目旨在什么什么什么什么什么1',
-        hostunit: 'XXX部',
-        acttime: '2019-3-12',
-        actaddr: 'C10',
-        actaim: '该活动旨在什么什么什么什么什么什么什什么什么什么什什么什什么什么什么什么什么什什么什么什么什么什么什么什么什么什么什么什么什么是'
-      }, {
-        title: '这是一个题目2',
-        hostunit: 'XXX部',
-        acttime: '2019-3-12',
-        actaddr: 'C10',
-        actaim: '该活动旨在什么什么什么什么什么什么什什么什么什么什什么什什么什么什么什么什么什什么什么什么什么什么什么什么什么什么什么什么什么是'
-      }, {
-        title: '这是一个题目3',
-        hostunit: 'XXX部',
-        acttime: '2019-3-12',
-        actaddr: 'C10',
-        actaim: '该活动旨在什么什么什么什么什么什么什什么什么什么什什么什什么什么什么什么什么什什么什么什么什么什么什么什么什么什么什么什么什么是'
-      }, {
-        title: '这是一个题目4',
-        hostunit: 'XXX部',
-        acttime: '2019-3-12',
-        actaddr: 'C10',
-        actaim: '该活动旨在什么什么什么什么什么什么什什么什么什么什什么什什么什么什么什么什么什什么什么什么什么什么什么什么什么什么什么什么什么是'
-      }, {
-        title: '这是一个题目5',
-        hostunit: 'XXX部',
-        acttime: '2019-3-12',
-        actaddr: 'C10',
-        actaim: '该活动旨在什么什么什么什么什么什么什什么什么什么什什么什什么什么什么什么什么什什么什么什么什么什么什么什么什么什么什么什么什么是'
+      activities: {
+        ongoing: [],
+        preparing: [],
+        timelines: []
       }
-      ],
-      activities2: [{
-        content: 'XXX活动',
-        timestamp: '2018-04-12'
-      }, {
-        content: 'XXX讲座',
-        timestamp: '2018-04-03'
-      }, {
-        content: 'XXX宣讲会',
-        timestamp: '2018-04-03'
-      }, {
-        content: 'XXX活动',
-        timestamp: '2018-04-03'
-      }]
     }
+  },
+  computed: {
+    isOngoing: function () {
+      return this.activities.ongoing.length !== 0
+    }
+  },
+  beforeMount () {
+    var that = this
+    apiGetActivities(res => {
+      this.activities.ongoing = res.ongoing
+      that.activities.preparing = res.preparing
+      that.activities.timelines = res.timelines
+    })
   }
-
 }
 </script>
 <style lang="stylus" scoped src="../../assets/css/home/Home.styl"></style>
