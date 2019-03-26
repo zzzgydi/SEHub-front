@@ -1,12 +1,10 @@
 <template>
   <div>
-    <!--<div class="apy-header">活动申请</div>-->
     <simple-header title="活动申请"></simple-header>
     <el-container class="apy-container">
       <el-main>
         <div class="apy-form-container">
           <el-form :model="applyForm" ref="applyForm" label-width="100px">
-            <!-- <div class="simple-label sl-others-1">基本信息</div> -->
             <el-form-item label="活动背景">
               <el-input
                 type="textarea"
