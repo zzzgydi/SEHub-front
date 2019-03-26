@@ -44,5 +44,5 @@ export default {
   }
 }
 </script>
-<style lang="stylus" scoped src="./setable.styl">
+<style lang="stylus" scoped src="./ShowTable.styl">
 </style>

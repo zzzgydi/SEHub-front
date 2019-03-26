@@ -60,4 +60,4 @@ export default {
   }
 }
 </script>
-<style lang="stylus" scoped src="../../assets/css/home/Home.styl"></style>
+<style lang="stylus" scoped src="./Home.styl"></style>

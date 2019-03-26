@@ -45,6 +45,15 @@
                 <el-input v-model="applyForm.acttime_more" class="apy-input-mini"></el-input>
               </el-row>
             </el-form-item>
+            <el-form-item label="活动简介">
+              <el-input
+                type="textarea"
+                rows="5"
+                v-model="applyForm.actintro"
+                resize="none"
+                class="apy-text-normal"
+              ></el-input>
+            </el-form-item>
             <el-form-item label="启用服务">
               <el-switch v-model="applyForm.isServer" active-color="#13ce66"></el-switch>&emsp;&emsp;
               <el-tooltip placement="right" effect="light">
@@ -86,6 +95,7 @@ export default {
         acttime_more: '',
         actback: '',
         actaim: '',
+        actintro: '',
         actddl: '',
         hostunit: '华南理工大学软件学院',
         organizer: '',
@@ -104,7 +114,7 @@ export default {
 }
 </script>
 
-<style scoped lang="stylus" src="../../assets/css/apply/apply.styl"></style>
+<style scoped lang="stylus" src="./apply.styl"></style>
 <style lang="stylus" scoped>
 .simple-label {
   padding: 5px 10px 5px 10px;

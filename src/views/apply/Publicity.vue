@@ -153,6 +153,6 @@ export default {
   }
 }
 </script>
-<style scoped lang="stylus" src="../../assets/css/apply/apply.styl"></style>
+<style scoped lang="stylus" src="./apply.styl"></style>
 <style lang="stylus" scoped>
 </style>

@@ -142,5 +142,5 @@ export default {
   }
 }
 </script>
-<style lang="stylus" scoped src="../../assets/css/module/RegSys.styl">
+<style lang="stylus" scoped src="./RegSys.styl">
 </style>

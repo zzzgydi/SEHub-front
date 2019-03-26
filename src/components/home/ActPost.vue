@@ -37,6 +37,6 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped src="../../assets/css/home/ActPost.styl"></style>
+<style lang="stylus" scoped src="./ActPost.styl"></style>
 <style lang="stylus" scoped>
 </style>

@@ -4,12 +4,16 @@
     <el-container class="work-container">
       <el-main class="left-box">
         <div class="depart-apy-box">
-          <div class="depart-apy-title">部门申请</div>
-          <div v-for="(msg, idx) in msgs" :key="idx" class="msg-box">
+          <div class="depart-apy-title">通知信息</div>
+          <div v-for="(msg, idx) in msgs" :key="idx" :class="'msg-box ' + 'msg-box-'+msg.state">
             <div class="msg-box-content">
-              <span id="msg-span-1" :class="'msg-span-'+msg.state">&emsp;█&emsp;</span>
-              <span id="msg-span-title">{{msg.title}}</span>
-              <span id="msg-from">&emsp;from:{{msg.from}}</span>
+              <span id="msg-span">&emsp;█&ensp;</span>
+              <span>{{msg.title}}</span>
+              <span id="msg-from">
+                &ensp;
+                <i class="el-icon-message"></i>
+                {{msg.from}}
+              </span>
             </div>
             <div class="msg-box-more">
               <i class="el-icon-more-outline"></i>
@@ -19,15 +23,10 @@
       </el-main>
       <el-main class="right-box">s</el-main>
     </el-container>
-    <!--<activity-table></activity-table>-->
   </div>
 </template>
 <script>
-// import ActTable from '../../components/home/table/Activity_table'
 export default {
-  components: {
-    // 'activity-table': ActTable
-  },
   data () {
     return {
       msgs: [{
@@ -37,64 +36,92 @@ export default {
         from: 'XXX'
       }, {
         type: '',
-        title: '活动申请',
-        state: 'check'
+        title: '宣传物资申请',
+        state: 'check',
+        from: '文艺部'
       }, {
         type: '',
         title: '活动申请',
-        state: 'finish'
+        state: 'finish',
+        from: 'XXX部'
       } ]
     }
   }
 }
 </script>
 <style lang="stylus" scoped>
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .el-container, .el-main {
   margin: 0;
   padding: 0;
 }
 
+left_width = 350px;
+right_width = 750px;
+
+.work-container {
+  width: left_width + right_width;
+  margin: 0 auto;
+}
+
+.left-box {
+  width: left_width;
+  border: 1px solid red;
+  padding: 10px;
+}
+
+.right-box {
+  width: right_width;
+  border: 1px solid red;
+  padding: 10px;
+}
+
 apymsg_height = 60px;
-apymsg_width = 350px;
+apymsg_width = 320px;
 
 .depart-apy-box {
-  width: 350px;
+  width: apymsg_width;
   border-radius: 10px;
-  border: 1px solid #ddd;
+  border: 0.5px solid #909399;
   min-height: 500px;
-  margin: 20px;
 }
 
 .depart-apy-title {
-  height: 40px;
-  line-height: 40px;
+  height: 45px;
+  line-height: 45px;
   text-align: center;
   font-size: 22px;
-  background: #50aEFF;
+  background: #909399;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  color: #eee;
+  color: #fff;
 }
 
 .msg-box {
   width: apymsg_width;
   height: apymsg_height;
-  font-size: 22px;
+  font-size: 19px;
   line-height: 60px;
   color: #303133;
   border-bottom: 1px solid #888;
 
+  &:hover {
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  }
+
   .msg-box-content {
-    width: 300px;
+    width: apymsg_width - 45px;
     float: left;
   }
 
-  #msg-span-1 {
-    font-size: 22px;
-  }
-
   #msg-from {
-    font-size: 14px;
+    font-size: 15px;
     color: #909399;
   }
 
@@ -104,19 +131,33 @@ apymsg_width = 350px;
   }
 }
 
-.msg-span-submit {
-  color: #67C23A;
+.msg-box-submit {
+  .msg-box-more, #msg-span {
+    color: #67C23A;
+  }
+
+  &:hover {
+    background: #67C23A20;
+  }
 }
 
-.msg-span-check {
-  color: #E6A23C;
+.msg-box-check {
+  .msg-box-more, #msg-span {
+    color: #E6A23C;
+  }
+
+  &:hover {
+    background: #E6A23C20;
+  }
 }
 
-.msg-span-finish {
-  color: #909399;
-}
+.msg-box-finish {
+  .msg-box-more, #msg-span {
+    color: #909399;
+  }
 
-.work-container {
-  border: 1px solid red;
+  &:hover {
+    background: #90939920;
+  }
 }
 </style>
