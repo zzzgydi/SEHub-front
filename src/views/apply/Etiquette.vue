@@ -49,7 +49,7 @@
   </div>
 </template>
 <script>
-import { matterEtiquette } from '../../assets/js/const/matters.js'
+import { matterEtiquette } from '../../assets/js/matters.js'
 export default {
   data () {
     return {

@@ -119,7 +119,7 @@
   </div>
 </template>
 <script>
-import { matterPublicity } from '../../assets/js/const/matters.js'
+import { matterPublicity } from '../../assets/js/matters.js'
 export default {
   data () {
     return {

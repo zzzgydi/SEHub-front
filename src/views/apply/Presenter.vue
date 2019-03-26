@@ -45,7 +45,7 @@
   </div>
 </template>
 <script>
-import { matterPresenter } from '../../assets/js/const/matters.js'
+import { matterPresenter } from '../../assets/js/matters.js'
 export default {
   data () {
     return {

@@ -66,7 +66,7 @@
   </div>
 </template>
 <script>
-import { matterMaterials } from '../../assets/js/const/matters.js'
+import { matterMaterials } from '../../assets/js/matters.js'
 export default {
   data () {
     return {
