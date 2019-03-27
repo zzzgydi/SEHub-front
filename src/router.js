@@ -15,16 +15,25 @@ export default new Router({
     component: () => import('./views/Index.vue'),
     children: [{
       path: '/home',
-      component: () => import('./views/home/Home.vue')
+      component: () => import('./views/home/Home_new.vue')
     }, {
       path: '/home/eachact/:id',
       component: () => import('./views/home/EachAct.vue')
+    }, {
+      path: '/person',
+      component: () => import('./views/others/Person.vue')
+    }, {
+      path: '/depart',
+      component: () => import('./views/others/Depart.vue')
     }, {
       path: '/work',
       component: () => import('./views/second/Work.vue')
     }, {
       path: '/others',
       component: () => import('./views/others/Others.vue')
+    }, {
+      path: '/apply',
+      component: () => import('./views/apply/Apply.vue')
     }, {
       path: '/apply/activity',
       component: () => import('./views/apply/Activity.vue')

@@ -1,40 +1,86 @@
-// .apy-header
-//   width 90%
-//   margin 20px auto
-//   padding 20px
-//   border-bottom solid 1px red
-//   font-size 24px
+@import "../../assets/css/default"
 
+// 以固定宽为900px设计
+$widow_width = 900px
 
-
-apy_form_width = 550px
+apy_form_width = 540px
 apy_matter_width = 280px
 
 
-.apy-container
-  width apy_form_width + apy_matter_width + 160px
-  margin 10px auto
-  .el-container
-  .el-main
-    margin 0
-    padding 0
+.apply-box
+  width $widow_width
+  display flex
+  flex-wrap: wrap
+  margin-left 60px
+  justify-content: space-between
+  
+  each-box()
+    width 260px
+    border-box()
+    text-align: center
+    font-size 1.2em
+    margin-bottom 35px
+    padding-top 25px
+    padding-bottom 15px
+    color #606266
 
+  .each-box,
+  .each-box-ph
+    each-box()
+    .each-img
+      width 60px
+      height 60px
+      margin 0 auto
+      overflow hidden
+      line-height 60px
+      font-size 2.1em
+      padding 10px
+      border-radius(50%)
+      background: #909399;
+      color #ffffff
+
+    .each-title
+      margin-top 10px
+      line-height 40px
+
+  .each-box:hover
+    hover-box()
+    .each-title
+      font-size 1.4em
+      color #409EFF
+    .each-img
+      background: #409EFF
+     
+  .each-box-ph
+    .each-img
+      background: #C0C4CC;
+    .each-title
+      line-height 36px
+      font-size 1.2em
+
+
+
+
+.apy-container
+  width $widow_width + 20px
+  margin-top 24px
+  margin-left 60px
 
 .apy-form-container
+  float left
   width apy_form_width
-  padding 40px 42px 40px 10px
-  //margin 10px auto
-  border 0.5px solid #aaaaaa
-  border-radius 20px
+  padding 30px 10px 40px 10px
+  border-box()
+  margin-right 30px
+  margin-bottom 75px
 
 // 注意事项的样式
 .apy-matter-container
+  float left
   width apy_matter_width
-  padding 30px 15px 20px 20px
-  border 0.5px solid #ccc
-  border-radius 20px
+  padding 24px 15px 20px 20px
+  border-box()
   color: #909399
-  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
   .apy-matter-title
     font-size 20px
     color #606266
@@ -43,14 +89,14 @@ apy_matter_width = 280px
     margin-bottom 6px
 
 .apy-form-dashed
-  width: 100%
+  width: 95%
   height 1px
-  border-top dashed 1px #aaa
-  margin-left 15px
-  margin-bottom 20px
+  border-top dashed 1px #ddd
+  margin 5px auto
+  margin-bottom 24px
 
 .apy-text-normal
-  width 450px
+  width 445px
 
 .apy-input-normal
   width 360px
@@ -89,17 +135,16 @@ btn_box_margin = (apy_form_width - btn_box_width)/2+22px
   margin-left btn_box_margin
 
 
-.apy-btn-after
+.apy-btn-after,
 .apy-btn
   width apy_btn_width
 
 .apy-btn-after
   margin-left btn_interval
 
-
 .apy-pub-input-mini
   width 80px
 
 .apy-pub-form-btn
-  margin-left 220px
+  margin-left 200px
 

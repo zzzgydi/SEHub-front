@@ -1,19 +1,28 @@
 <template>
   <div class="actp-each-box" @click="clickAct">
-    <el-row>
-      <el-col :span="10" class="actp-img-box">
-        <img class="actp-img" src="../../../public/timg_1.jpg" alt="海报">
-      </el-col>
-      <el-col :span="14" class="actp-desc-box">
+    <div class="actp--each-box">
+      <div class="actp-img-box">
+        <img class="actp-img" src="../../../public/timg_2.jpg" alt="海报">
+      </div>
+      <div class="actp-desc-box">
         <div class="actp-desc-title">{{activity.title}}</div>
         <div class="actp-desc-detail">
-          <div class="actp-desc-detail-each">主办单位：{{activity.hostunit}}</div>
-          <div class="actp-desc-detail-each">活动时间：{{activity.acttime}}</div>
-          <div class="actp-desc-detail-each">活动地点：{{activity.actaddr}}</div>
+          <div class="actp-desc--each">
+            活动时间:
+            <span>{{activity.acttime}}</span>
+          </div>
+          <div class="actp-desc--each">
+            活动地点:
+            <span>{{activity.actaddr}}</span>
+          </div>
+          <div class="actp-desc--each">
+            主办单位:
+            <span>{{activity.hostunit}}</span>
+          </div>
         </div>
-        <div class="actp-desc-more">{{activity.actaim}}</div>
-      </el-col>
-    </el-row>
+        <!-- <div class="actp-desc-more">{{activity.actaim}}</div> -->
+      </div>
+    </div>
   </div>
 </template>
 

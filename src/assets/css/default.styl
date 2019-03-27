@@ -1,0 +1,32 @@
+border-radius(n)
+  -webkit-border-radius n
+  -moz-border-radius n
+  border-radius n
+
+// 默认的边框样式
+border-box()
+  border solid 1px #ccc
+  border-radius(10px)
+
+// 不可选中
+not-select()
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+// 选项框hover时的默认样式
+hover-box()
+  background: #EBEEF5;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  -webkit-transition: background 15ms;
+  transition: background 15ms;
+
+
+// 常量定义
+$color_default = #409EFF;
+$color_submit = #67C23A;
+$color_check = #E6A23C;
+$color_finish = #909399;
+$color_theme = #1967d2;
+$backcolor_theme = #e8f0fe;
