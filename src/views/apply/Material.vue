@@ -51,19 +51,22 @@
             ></el-input>
           </el-form-item>
         </el-form>
+        <div class="apy-btn-box">
+          <el-button class="apy-btn-submit" @click="applyPreview">提交</el-button>
+        </div>
       </div>
       <div class="apy-matter-container">
-        <div class="apy-matter-title">注意事项</div>
-        <div v-for="(matter,idx) in matters" :key="idx" class="apy-matter-each">
-          <span>{{idx+1}}.&emsp;{{matter}}</span>
-        </div>
+        <matter-view></matter-view>
       </div>
     </div>
   </div>
 </template>
 <script>
-import { matterMaterials } from '../../assets/js/matters.js'
+import MatterView from '../../components/matters/MaterialMatter'
 export default {
+  components: {
+    'matter-view': MatterView
+  },
   data () {
     return {
       applyForm: {
@@ -75,8 +78,7 @@ export default {
           name: '',
           num: ''
         }]
-      },
-      matters: matterMaterials
+      }
     }
   },
   methods: {
@@ -85,6 +87,12 @@ export default {
     },
     delApyNeeds (index) {
       this.applyForm.needs.splice(index, 1)
+    },
+    applyPreview () {
+
+    },
+    applySubmit () {
+
     }
   }
 }

@@ -18,7 +18,7 @@ apy_matter_width = 280px
     width 260px
     border-box()
     text-align: center
-    font-size 1.2em
+    font-size 1.1em
     margin-bottom 35px
     padding-top 25px
     padding-bottom 15px
@@ -33,23 +33,31 @@ apy_matter_width = 280px
       margin 0 auto
       overflow hidden
       line-height 60px
-      font-size 2.1em
+      font-size 2em
       padding 10px
       border-radius(50%)
       background: #909399;
       color #ffffff
+      text-shadow:4px 2px 10px #303333;
 
     .each-title
       margin-top 10px
       line-height 40px
+      transition-duration: 200ms
 
   .each-box:hover
     hover-box()
+    .each-img
+      font-size: 1.6em
+      transition-property: font-size, background-color;
+      transition-duration: 200ms
+      background: #409EFF
     .each-title
       font-size 1.4em
       color #409EFF
-    .each-img
-      background: #409EFF
+      transition-property: font-size,color;
+      transition-duration: 200ms
+      
      
   .each-box-ph
     .each-img
@@ -78,15 +86,6 @@ apy_matter_width = 280px
 .apy-matter-container
   float left
   width apy_matter_width
-  padding 24px 15px 20px 20px
-  border-box()
-  color: #909399
-  .apy-matter-title
-    font-size 20px
-    color #606266
-    padding-bottom 6px
-  .apy-matter-each
-    margin-bottom 6px
 
 .apy-form-dashed
   width: 95%
@@ -122,25 +121,6 @@ apy_matter_width = 280px
     color red
     border-color red
 
-/* Button 相关 */
-apy_btn_width = 100px
-btn_interval = 50px
-btn_box_width = 2*apy_btn_width + btn_interval
-btn_box_margin = (apy_form_width - btn_box_width)/2+22px
-
-
-.apy-btn-box
-  width btn_box_width
-  margin-top 40px
-  margin-left btn_box_margin
-
-
-.apy-btn-after,
-.apy-btn
-  width apy_btn_width
-
-.apy-btn-after
-  margin-left btn_interval
 
 .apy-pub-input-mini
   width 80px
@@ -148,3 +128,20 @@ btn_box_margin = (apy_form_width - btn_box_width)/2+22px
 .apy-pub-form-btn
   margin-left 200px
 
+
+
+
+/* Button 相关 */
+apy_btn_width = 150px
+btn_box_margin = (apy_form_width - apy_btn_width)/2
+
+
+.apy-btn-box
+  margin-top 40px
+  margin-left btn_box_margin
+  .apy-btn-submit
+    border-color: $color_default
+    width apy_btn_width
+    color $color_theme
+
+/* ----  */

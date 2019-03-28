@@ -160,7 +160,7 @@ $bar_width = 280px;
     line-height: $width;
     text-align: center;
     color: #fff;
-    font-size: 1.1em;
+    font-size: 1em;
     overflow: hidden;
   }
 }

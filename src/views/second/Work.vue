@@ -8,7 +8,7 @@
             <div class="notice--head">
               <div class="nb-head-title">通知管理</div>
               <div class="nb-head-img">
-                <img src="../../../public/notice2.png" alt width="48px">
+                <img src="../../../public/notice2.png" alt width="36px">
               </div>
             </div>
           </div>
@@ -96,14 +96,14 @@ right_width = 500px;
   $box_width = 360px;
   $box_height = 500px;
   width: $box_width;
-  min-height: $box_height;
+  // min-height: $box_height;
   border-box();
   padding-top: 15px;
   // padding-left: 20px;
   padding-bottom: 25px;
 
   .notice-head {
-    $h = 48px;
+    $h = 40px;
     padding-left: 20px;
 
     .notice--head {
@@ -139,15 +139,15 @@ right_width = 500px;
 
         .nb-body-i {
           float: left;
-          width: 42px;
-          height: 42px;
+          width: 32px;
+          height: 32px;
           border-radius: 50%;
           color: #fff;
           text-align: center;
           overflow: hidden;
-          font-size: 27px;
-          line-height: 38px;
-          margin-top: 15px;
+          font-size: 20px;
+          line-height: 32px;
+          margin-top: 19px;
           margin-right: 10px;
         }
 

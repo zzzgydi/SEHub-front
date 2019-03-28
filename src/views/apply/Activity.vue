@@ -70,8 +70,7 @@
             </el-upload>
           </el-form-item>
           <div class="apy-btn-box">
-            <el-button class="apy-btn">暂存</el-button>
-            <el-button class="apy-btn-after" @click="handleClick">提交</el-button>
+            <el-button class="apy-btn-submit" @click="applyPreview">提交</el-button>
           </div>
         </el-form>
       </div>
@@ -103,8 +102,11 @@ export default {
     }
   },
   methods: {
-    handleClick () {
-      console.log(document.body.offsetHeight)
+    applyPreview () {
+
+    },
+    applySubmit () {
+
     }
   }
 }

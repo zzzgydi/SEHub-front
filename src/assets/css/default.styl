@@ -19,8 +19,8 @@ not-select()
 hover-box()
   background: #EBEEF5;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-  -webkit-transition: background 15ms;
-  transition: background 15ms;
+  -webkit-transition: background 200ms;
+  transition: background 200ms;
 
 
 // 常量定义
@@ -30,3 +30,69 @@ $color_check = #E6A23C;
 $color_finish = #909399;
 $color_theme = #1967d2;
 $backcolor_theme = #e8f0fe;
+
+
+
+
+
+// 旋转的钟动画
+def-animation-clock()
+  @-moz-keyframes hrhand{
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  @-ms-keyframes hrhand{
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  @-webkit-keyframes hrhand{
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  @keyframes hrhand {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .clock {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    box-shadow: inset 0px 0px 0px 2px $color_default;
+    border-radius: 50%;
+    position: relative;
+    // margin: 38px auto;
+  }
+  .clock:before {
+    width: 10px;
+    height: 2px;
+    top: 14px;
+    left: 14px;
+    -webkit-transform-origin: 1px 1px;
+    -moz-transform-origin: 1px 1px;
+    transform-origin: 1px 1px;
+    -webkit-animation: hrhand 8s linear infinite;
+    -moz-animation: hrhand 8s linear infinite;
+    animation: hrhand 8s linear infinite;
+    background-color: $color_theme;
+  }
+
+  .clock:after {
+    width: 13px;
+    height: 2px;
+    top: 14px;
+    left: 14px;
+    -webkit-transform-origin: 1px 1px;
+    -moz-transform-origin: 1px 1px;
+    transform-origin: 1px 1px;
+    -webkit-animation: hrhand 2s linear infinite;
+    -moz-animation: hrhand 2s linear infinite;
+    animation: hrhand 2s linear infinite;
+    background-color: $color_theme;
+  }
+
+  .clock:before, .clock:after {
+    position: absolute;
+    content: '';
+  }
+
+

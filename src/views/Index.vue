@@ -11,9 +11,11 @@
         <side-bar></side-bar>
       </div>
       <div class="right-box">
-        <keep-alive>
-          <router-view></router-view>
-        </keep-alive>
+        <transition name="fade" mode="out-in">
+          <keep-alive>
+            <router-view></router-view>
+          </keep-alive>
+        </transition>
       </div>
     </div>
   </div>
@@ -60,5 +62,13 @@ export default {
       overflow-y: scroll;
     }
   }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.1s linear;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 </style>

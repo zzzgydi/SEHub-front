@@ -1,0 +1,226 @@
+@import '../../assets/css/default';
+
+.home-container {
+  width: 900px;
+  margin-left: 60px;
+}
+
+.home-box {
+  not-select()
+  width: 600px;
+  border-box();
+  // padding-bottom: 30px;
+  margin-bottom: 80px;
+  float: left;
+
+  .slide-fade-enter-active {
+    transition: all 0.8s ease;
+  }
+  
+  .slide-fade-leave-active{
+    transition: all 0s ease;
+  }
+  
+  .slide-fade-enter, .slide-fade-leave-to{
+    transform: translateX(10px);
+    opacity: 0;
+  }
+
+  .home--title-box {
+    line-height: 75px;
+    margin-left: 20px;
+    padding-left: 20px;
+    border-bottom: 1px solid #ccc;
+    color: $color_default;
+    display flex
+    // justify-content: space-between;
+
+    .animation-clock {
+      margin-top 23px
+      def-animation-clock()
+      z-index: 200;
+    }
+    .title-active{
+      margin-left 10px;
+      font-size: 1.4em;
+      // border-box()
+    }
+    .title-change{
+      font-size: 16px;
+      text-decoration: underline;
+      color: $color_theme;
+      margin-left 280px
+      &:hover{
+        color: #909399
+      }
+    }
+  }
+
+  $img-width = 115px;
+  $img-height = $img-width * 1.4135;
+
+  .home--each-box {
+    height: $img-height + 50px;
+    padding-left: 20px;
+
+    // border-bottom: 1px solid red;
+    &:hover {
+      hover-box();
+    }
+    
+    .each-box {
+      height: $img-height;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #ccc;
+      
+      .each-img-box {
+        width: $img-width;
+        float: left;
+        margin-left: 10px;
+
+        img {
+          border-radius(6px);
+        }
+      }
+
+      .each-text-box {
+        float: left;
+        margin-top: 5px;
+        margin-left: 18px;
+
+        .each-title {
+          width: 260px;
+          height: 56px;
+          overflow: hidden;
+          font-size: 1.2em;
+          line-height: 28px;
+        }
+
+        .desc-detail {
+          margin-top: 15px;
+          font-size: 14px;
+
+          .desc--each {
+            line-height: 20px;
+            overflow: hidden;
+            color: #a0a3a9;
+
+            span {
+              font-size: 14px;
+              color: #606266;
+            }
+          }
+        }
+      }
+    }
+
+    .each-more-box {
+      float: left;
+      margin-left: 55px;
+      margin-top: 50px;
+
+      .each-more--1 {
+        $h = 24px;
+        height: $h;
+        margin-bottom: 20px;
+
+        #more-img {
+          float: left;
+          padding-top: 1px;
+        }
+
+        #more-num, #more-num-check {
+          float: left;
+          line-height: $h;
+          font-size: 1.2em;
+          color: #909399;
+          margin-left: 8px;
+        }
+
+        #more-num-check {
+          color: $color_check;
+        }
+      }
+    }
+  }
+
+  .home--null-box{
+    height 300px 
+    border-bottom 1px solid #ccc
+    .home--null-tip{
+      text-align: center
+      color #909399
+      padding-top 210px
+    }
+  }
+
+  .home--history-box{
+    text-align: center
+    line-height 75px
+    color: $color_theme
+    &:hover{
+      color #606266
+      text-decoration: underline
+    }
+  }
+}
+
+.mag-glass-box{
+  position relative
+  top 120px
+  left 260px
+  .mag-null{
+    position absolute
+    z-index 30
+    line-height 45px
+    font-weight: bold
+    font-size 1.8em
+    color #C0C4CC
+    // text-shadow: 1px 1px 10px #909399;
+  }
+  $x = 12px
+  $y = -20px
+  $glass_color = #909399
+  @keyframes mag_animation {
+    0%{ transform: translate(0px + $x, 0px + $y); }
+    29% { transform: translate(-21px + $x, 21px + $y); }
+    71% { transform: translate(21px + $x, 21px + $y); }
+    100%{ transform: translate(0px + $x, 0px + $y); }
+  }
+  .mag-glass{
+    width 40px
+    height 40px
+    background-color rgba(200, 200, 200, 0.3)
+    border 6px solid $glass_color
+    border-radius(50%)
+    position: absolute
+    z-index 50
+    animation: mag_animation 1.8s linear
+    animation-iteration-count: infinite
+    &:before{
+      position: absolute
+      content: ""
+      width 30px
+      height 7px
+      background-color $glass_color
+      transform: rotate(45deg)
+      top 43px
+      left 29px
+      border-radius(3px)
+    }
+  }
+}
+
+
+.timeline-box {
+  width: 220px;
+  margin-left: 60px;
+  float: left;
+  border-box();
+
+  .tl-box {
+    padding-top: 30px;
+    padding-left: 30px;
+  }
+}
