@@ -6,7 +6,10 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     isLogin: false,
-    user: {},
+    user: {
+      name: 'Test',
+      depart: 'XXX部'
+    },
     permission: {},
     activities: {
       ongoing: [],

@@ -12,9 +12,10 @@
       </div>
       <div class="right-box">
         <transition name="fade" mode="out-in">
-          <keep-alive>
+          <keep-alive exclude="applyform">
             <router-view></router-view>
           </keep-alive>
+          <!-- <router-view></router-view> -->
         </transition>
       </div>
     </div>

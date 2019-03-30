@@ -1,6 +1,6 @@
 <template>
   <div>
-    <simple-header title="礼仪队"></simple-header>
+    <simple-header title="礼仪队申请"></simple-header>
     <div class="apy-container">
       <div class="apy-form-container">
         <el-form v-model="applyForm" ref="applyForm" label-width="80px">
@@ -33,6 +33,9 @@
               class="apy-text-normal"
             ></el-input>
           </el-form-item>
+          <el-form-item label="上传附件">
+            <se-upload></se-upload>
+          </el-form-item>
         </el-form>
 
         <div class="apy-btn-box">
@@ -43,13 +46,20 @@
         <matter-view></matter-view>
       </div>
     </div>
+    <transition name="preview-fade">
+      <div v-if="isPreview" class="preview-container">
+        <preivew @preview_close="isPreview = false" :pvdata="previewObj"></preivew>
+      </div>
+    </transition>
   </div>
 </template>
 <script>
 import MatterView from '../../components/matters/EtiquetteMatter'
+import Preview from '../../components/home/Preview.vue'
 export default {
   components: {
-    'matter-view': MatterView
+    'matter-view': MatterView,
+    'preivew': Preview
   },
   data () {
     return {
@@ -60,12 +70,30 @@ export default {
         number: '',
         etiwork: [],
         others: ''
-      }
+      },
+      isPreview: false,
+      previewObj: { content: {} }
     }
   },
   methods: {
     applyPreview () {
-
+      this.isPreview = true
+      this.previewObj.title = '礼仪队申请'
+      this.previewObj.content.postname = '张XX'
+      this.previewObj.content.postdapart = '文艺部'
+      this.previewObj.content.posttime = new Date().toLocaleString()
+      this.previewObj.content.actname = this.applyForm.actname
+      this.previewObj.content.actaddr = this.applyForm.actaddr
+      this.previewObj.content.acttime = this.applyForm.acttime
+      this.previewObj.content.number = this.applyForm.number
+      this.previewObj.content.etiwork = this.applyForm.etiwork.join('；')
+      this.previewObj.content.others = this.applyForm.others
+      // test
+      this.previewObj.content.goods = ['s', 'asas', 'ass']
+      console.log(this.previewObj)
+      for (var i in this.previewObj.content) {
+        console.log(i, this.previewObj.content[i])
+      }
     },
     applySubmit () {
 

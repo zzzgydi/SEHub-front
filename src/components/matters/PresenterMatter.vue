@@ -7,7 +7,7 @@
   </div>
 </template>
 <script>
-import { matterPresenter } from './matter.js'
+import { matterPresenter } from './matters.js'
 export default {
   data () {
     return {

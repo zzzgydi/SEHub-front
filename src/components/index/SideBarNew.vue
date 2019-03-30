@@ -54,6 +54,12 @@ export default {
   computed: {
 
   },
+  watch: {
+    '$route.path': function (val, oldval) {
+      // console.log('SideBar: from ' + oldval + ' to ' + val)
+      this.active = this.$route.path
+    }
+  },
   methods: {
     optionClass (item) {
       if (item.path === this.active) {
@@ -73,7 +79,7 @@ export default {
   },
   beforeMount () {
     this.active = this.$route.path
-    console.log('Mount了', this.$route.path)
+    // console.log('Mount了', this.$route.path)
   }
 }
 </script>

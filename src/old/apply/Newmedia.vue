@@ -1,7 +1,7 @@
-<!--主持人申请-->
+<!-- 新媒体申请 -->
 <template>
   <div>
-    <simple-header title="主持人申请"></simple-header>
+    <simple-header title="新媒体申请"></simple-header>
     <div class="apy-container">
       <div class="apy-form-container">
         <el-form :model="applyForm" ref="applyForm" label-width="80px">
@@ -14,20 +14,29 @@
           <el-form-item label="活动时间">
             <el-date-picker v-model="applyForm.acttime" type="date" value-format="yyyy-MM-dd"></el-date-picker>
           </el-form-item>
-          <el-form-item label="彩排时间">
-            <el-date-picker v-model="applyForm.rehtime" type="date" value-format="yyyy-MM-dd"></el-date-picker>
+          <el-form-item label="提交时间">
+            <el-date-picker v-model="applyForm.ddl" type="date" value-format="yyyy-MM-dd"></el-date-picker>
           </el-form-item>
-          <el-form-item label="申请人数">
-            <el-input v-model="applyForm.number" class="apy-input-normal"></el-input>
+          <el-form-item label="申请项目">
+            <el-checkbox-group v-model="applyForm.newwork">
+              <el-checkbox label="推送">推送</el-checkbox>
+              <el-checkbox label="推送排版">推送排版</el-checkbox>
+              <el-checkbox label="视频制作">视频制作</el-checkbox>
+              <el-checkbox label="其他">其他</el-checkbox>
+            </el-checkbox-group>
           </el-form-item>
-          <el-form-item label="备注">
+          <el-form-item label="特定要求">
             <el-input
               type="textarea"
               rows="5"
               v-model="applyForm.others"
               resize="none"
               class="apy-text-normal"
+              placeholder="请先阅读注意事项中标红的部分"
             ></el-input>
+          </el-form-item>
+          <el-form-item label="上传附件">
+            <se-upload></se-upload>
           </el-form-item>
         </el-form>
         <div class="apy-btn-box">
@@ -41,7 +50,7 @@
   </div>
 </template>
 <script>
-import MatterView from '../../components/matters/EtiquetteMatter'
+import MatterView from '../../components/matters/NewmediaMatter'
 export default {
   components: {
     'matter-view': MatterView
@@ -52,9 +61,8 @@ export default {
         actname: '',
         actaddr: '',
         acttime: '',
-        rehtime: '', // 彩排时间
-        number: '',
-        others: ''
+        ddl: '',
+        newwork: []
       }
     }
   },
@@ -68,5 +76,4 @@ export default {
   }
 }
 </script>
-
 <style scoped lang="stylus" src="./apply.styl"></style>

@@ -7,13 +7,15 @@ apy_form_width = 540px
 apy_matter_width = 280px
 
 
+// Apply Home
+
 .apply-box
   width $widow_width
   display flex
   flex-wrap: wrap
   margin-left 60px
   justify-content: space-between
-  
+  not-select()
   each-box()
     width 260px
     border-box()
@@ -68,6 +70,7 @@ apy_matter_width = 280px
 
 
 
+// Apply form
 
 .apy-container
   width $widow_width + 20px
@@ -82,66 +85,42 @@ apy_matter_width = 280px
   margin-right 30px
   margin-bottom 75px
 
+
 // 注意事项的样式
 .apy-matter-container
   float left
   width apy_matter_width
-
-.apy-form-dashed
-  width: 95%
-  height 1px
-  border-top dashed 1px #ddd
-  margin 5px auto
-  margin-bottom 24px
-
-.apy-text-normal
-  width 445px
-
-.apy-input-normal
-  width 360px
-
-.apy-input-medium
-  width 240px
-
-.apy-input-mini
-  width 150px
-
-.apy-tip
-  font-size 18px
-  color #999
-
-.apy-upload-box
-  width 180px
-  border 1px dashed #ccc
-  border-radius: 5px
-  text-align: center
-  font-size: 20px
-  color #ccc
-  &:hover
-    color red
-    border-color red
-
-
-.apy-pub-input-mini
-  width 80px
-
-.apy-pub-form-btn
-  margin-left 200px
-
-
-
 
 /* Button 相关 */
 apy_btn_width = 150px
 btn_box_margin = (apy_form_width - apy_btn_width)/2
 
 
-.apy-btn-box
-  margin-top 40px
+.apy-btn-submit
+  margin-top 10px
   margin-left btn_box_margin
-  .apy-btn-submit
-    border-color: $color_default
-    width apy_btn_width
-    color $color_theme
+  border-color: $color_default
+  width apy_btn_width
+  color $color_theme
 
 /* ----  */
+
+// 预览框样式
+.preview-container
+  width 900px
+  position absolute;
+  top 0px
+  left 60px
+  bottom 0px
+  background-color: #fff;
+  z-index: 100
+
+.preview-fade-enter-active, 
+.preview-fade-leave-active {
+  transition: opacity 150ms linear;
+}
+
+.preview-fade-enter,
+.preview-fade-leave-to {
+  opacity: 0;
+}

@@ -35,32 +35,39 @@ export default new Router({
       path: '/apply',
       component: () => import('./views/apply/Apply.vue')
     }, {
-      path: '/apply/activity',
-      component: () => import('./views/apply/Activity.vue')
-    }, {
-      path: '/apply/etiquette',
-      component: () => import('./views/apply/Etiquette.vue')
-    }, {
-      path: '/apply/material',
-      component: () => import('./views/apply/Material.vue')
-    }, {
-      path: '/apply/presenter',
-      component: () => import('./views/apply/Presenter.vue')
-    }, {
-      path: '/apply/publicity',
-      component: () => import('./views/apply/Publicity.vue')
-    }, {
-      path: '/apply/reporter',
-      component: () => import('./views/apply/Reporter.vue')
-    }, {
-      path: '/apply/ticket',
-      component: () => import('./views/apply/Ticket.vue')
-    }, {
-      path: '/apply/newmedia',
-      component: () => import('./views/apply/Newmedia.vue')
+      path: '/apply/:id',
+      component: () => import('./views/apply/ApplyForm.vue')
     }]
   }, {
     path: '/module/regsys',
     component: () => import('./views/module/RegSys.vue')
   }]
 })
+/*
+
+, {
+  path: '/apply/activity',
+  component: () => import('./views/apply/Activity.vue')
+}, {
+  path: '/apply/etiquette',
+  component: () => import('./views/apply/Etiquette.vue')
+}, {
+  path: '/apply/material',
+  component: () => import('./views/apply/Material.vue')
+}, {
+  path: '/apply/presenter',
+  component: () => import('./views/apply/Presenter.vue')
+}, {
+  path: '/apply/publicity',
+  component: () => import('./views/apply/Publicity.vue')
+}, {
+  path: '/apply/reporter',
+  component: () => import('./views/apply/Reporter.vue')
+}, {
+  path: '/apply/ticket',
+  component: () => import('./views/apply/Ticket.vue')
+}, {
+  path: '/apply/newmedia',
+  component: () => import('./views/apply/Newmedia.vue')
+}
+*/

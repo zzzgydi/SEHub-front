@@ -77,6 +77,9 @@
               </div>
             </el-upload>
           </el-form-item>
+          <el-form-item label="上传附件">
+            <se-upload></se-upload>
+          </el-form-item>
         </el-form>
         <div class="apy-btn-box">
           <el-button class="apy-btn-submit" @click="applyPreview">提交</el-button>

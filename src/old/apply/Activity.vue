@@ -62,12 +62,8 @@
               </span>
             </el-tooltip>
           </el-form-item>
-          <el-form-item label="添加附件">
-            <el-upload action>
-              <div class="apy-upload-box">
-                <i class="el-icon-circle-plus-outline"></i>
-              </div>
-            </el-upload>
+          <el-form-item label="上传附件">
+            <se-upload></se-upload>
           </el-form-item>
           <div class="apy-btn-box">
             <el-button class="apy-btn-submit" @click="applyPreview">提交</el-button>
