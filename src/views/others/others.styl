@@ -1,0 +1,66 @@
+@import '../../assets/css/default';
+
+.module-container
+  width 900px
+  // background-color red
+
+.module-regsys-box
+  width 260px
+  height 300px
+  border-box()
+
+
+//
+ra-book-word()
+  width 45px
+  height 3px
+  background-color black
+  content: ''
+  position absolute
+  left 2px
+
+//
+
+.regsys-animation-box
+  position relative
+
+  .ra--book
+    width 50px
+    height 60px
+    border-radius(10px)
+    border 3px solid black
+
+    .ra-book-word
+      position relative
+      &:before
+        ra-book-word()
+        top 12px
+      &:after
+        ra-book-word()
+        top 24px
+    .ra-book-word2
+      position relative
+      &:before
+        ra-book-word()
+        top 36px
+      &:after
+        ra-book-word()
+        top 48px
+
+  .ra--pencil
+    width 40px
+    height 10px
+    border-top 3px solid black
+    border-bottom 3px solid black 
+  
+  .ra-pen-nib
+    position relative
+    left 20px
+    &:before
+      content: ''
+      position absolute
+      height 3px
+      width 15px
+      background-color black
+
+    
