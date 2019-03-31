@@ -41,6 +41,10 @@ export default {
         path: '/work',
         iclass: 'el-icon-star-off'
       }, {
+        name: '部门通知',
+        path: '/notice',
+        iclass: 'el-icon-bell'
+      }, {
         name: '工作申请',
         path: '/apply',
         iclass: 'el-icon-document'
@@ -83,109 +87,5 @@ export default {
   }
 }
 </script>
-<style lang="stylus" scoped>
-@import '../../assets/css/default';
-
-$bar_width = 280px;
-
-.side-bar {
-  not-select();
-  width: $bar_width;
-
-  .head-box {
-    height: 30px;
-    padding: 20px;
-
-    // background: red;
-    .head-img-box {
-      width: 40px;
-      height: 30px;
-      float: left;
-      // margin-left: 15px;
-    }
-
-    .head-title-box {
-      float: left;
-      font-size: 1.4em;
-      line-height: 30px;
-      margin-left: 8px;
-      color: #606266;
-    }
-  }
-}
-
-.side-box {
-  padding-top: 20px;
-
-  // border-box();
-  .line {
-    width: 100%;
-    height: 11px;
-    border-bottom: 1px solid #eee;
-    margin-bottom: 10px;
-  }
-}
-
-.option-box {
-  height: 48px;
-  padding-left: 24px;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-  color: #303133;
-
-  .img-box {
-    float: left;
-    width: 24px;
-    height: 24px;
-    line-height: 24px;
-    text-align: center;
-    font-size: 1.5em;
-    margin-top: 12px;
-    margin-right: 16px;
-    // background: green;
-  }
-
-  .title-box {
-    float: left;
-    width: 200px;
-    height: 20px;
-    line-height: 20px;
-    margin-top: 14px;
-    // background: red;
-  }
-
-  .img-box-person {
-    $width = 26px;
-    float: left;
-    width: $width;
-    height: $width;
-    margin-top: 11px;
-    margin-right: 14px;
-    border-radius(50%);
-    background: #909399;
-    line-height: $width;
-    text-align: center;
-    color: #fff;
-    font-size: 1em;
-    overflow: hidden;
-  }
-}
-
-.option-normal {
-  // test();
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.039);
-    -webkit-transition: background 15ms;
-    transition: background 15ms;
-  }
-}
-
-.option-active {
-  color: #1967d2;
-  background: #e8f0fe;
-
-  .img-box-person {
-    background: #409EFF;
-  }
-}
+<style lang="stylus" scoped src="./SideBarNew.styl">
 </style>

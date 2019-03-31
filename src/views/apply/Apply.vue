@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="default-container">
     <simple-header title="工作申请"></simple-header>
 
     <div class="apply-box">

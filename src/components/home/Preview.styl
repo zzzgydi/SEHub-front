@@ -2,11 +2,13 @@
 
 .preview-cnt
   width: 900px
-  background-color #fff
+  padding-top 20px
+
 .preview-box
-  margin-top 20px
+  padding-top 10px
   padding-left 20px
   padding-right 20px
+  padding-bottom: 10px
   border-box()
   box-shadow: 1px 1px 2px #555
 
@@ -15,13 +17,14 @@
   line-height: 80px
   text-align: center
   // background-color red
+  position relative
 
 .close-box
   width 32px
   height 32px
   position absolute
-  top 44px
-  right 49px
+  top 10px
+  right 0px
   border-radius(50%)
   border 2px solid #909399
   &:before,
@@ -85,17 +88,22 @@ td
   padding-top 8px
   padding-bottom: 8px
   color #606266
-  background-color #f8f8f8
+  // background-color red
   font-weight: bold
   // overflow hidden
   word-wrap:break-word;
 
 .preview-td-value
-  width $table_width - 100px
+  width $table_width - 120px
   text-align: left
   padding 8px
   color #303133
   line-height 30px
 
-.preview-td-label-special
-  background-color #F2F6FC
+.preview-btn-box
+  width: 200px
+  margin 30px auto
+  .preview-btn
+    width: 200px
+    color: $color_theme
+    border-color $color_theme

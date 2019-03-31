@@ -14,6 +14,8 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
+@import '../../assets/css/default';
+
 .apy-upload-box {
   width: 180px;
   border: 1px dashed #ccc;
@@ -23,8 +25,9 @@ export default {
   color: #ccc;
 
   &:hover {
-    color: $color_theme;
-    border-color: $color_theme;
+    // color: $color_theme;
+    color: #909399;
+    border-color: #909399;
   }
 }
 </style>

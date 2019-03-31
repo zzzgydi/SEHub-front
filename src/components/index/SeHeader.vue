@@ -24,10 +24,10 @@ $widow_width = 900px;
   height: 36px;
   line-height: 36px;
   text-align: center;
-  font-size: 1.65em;
-  color: #303133;
+  font-size: 1.75rem;
+  color: #202124;
   margin-top: 24px;
-  margin-left: 60px;
+  // margin-left: 60px;
   margin-bottom: 30px;
   // border-box();
 }

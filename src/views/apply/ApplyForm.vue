@@ -1,14 +1,16 @@
 <template>
-  <div>
-    <simple-header :title="formTitle"></simple-header>
-    <div class="apy-container">
-      <div class="apy-form-container">
-        <!-- el-form -->
-        <component ref="apyForm" :is="formID"></component>
-        <el-button class="apy-btn-submit" @click="applyPreview">提交</el-button>
-      </div>
-      <div class="apy-matter-container">
-        <component :is="matterID"></component>
+  <div class="default-container">
+    <div v-if="!isPreview">
+      <simple-header :title="formTitle"></simple-header>
+      <div class="apy-container">
+        <div class="apy-form-container">
+          <!-- el-form -->
+          <component ref="apyForm" :is="formID"></component>
+          <el-button class="apy-btn-submit" @click="applyPreview">提交</el-button>
+        </div>
+        <div class="apy-matter-container">
+          <component :is="matterID"></component>
+        </div>
       </div>
     </div>
     <transition name="preview-fade">

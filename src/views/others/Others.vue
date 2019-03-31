@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="default-container">
     <simple-header title="其他"></simple-header>
   </div>
 </template>
@@ -15,4 +15,5 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
+@import '../../assets/css/default';
 </style>

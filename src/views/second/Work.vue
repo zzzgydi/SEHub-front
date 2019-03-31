@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="default-container">
     <simple-header title="部门安排"></simple-header>
     <div class="work-container">
       <div class="left-box">
@@ -77,7 +77,6 @@ right_width = 500px;
 
 .work-container {
   width: 900px + 20px;
-  margin-left: 60px;
   border-box();
 }
 

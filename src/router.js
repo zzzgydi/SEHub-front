@@ -17,7 +17,7 @@ export default new Router({
       path: '/home',
       component: () => import('./views/home/Home_new.vue')
     }, {
-      path: '/home/eachact/:id',
+      path: '/home/activity/:id',
       component: () => import('./views/home/EachAct.vue')
     }, {
       path: '/person',
@@ -28,6 +28,9 @@ export default new Router({
     }, {
       path: '/work',
       component: () => import('./views/second/Work.vue')
+    }, {
+      path: '/notice',
+      component: () => import('./views/notice/Notice.vue')
     }, {
       path: '/others',
       component: () => import('./views/others/Others.vue')

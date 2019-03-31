@@ -2,7 +2,7 @@
 
 .home-container {
   width: 900px;
-  margin-left: 60px;
+  // margin-left: 60px;
 }
 
 .home-box {
@@ -28,9 +28,9 @@
 
   .home--title-box {
     line-height: 75px;
-    margin-left: 20px;
-    padding-left: 20px;
-    border-bottom: 1px solid #ccc;
+    // margin-left: 20px;
+    padding-left: 40px;
+    border-bottom: 1px solid #E4E7ED;
     color: $color_default;
     display flex
     // justify-content: space-between;
@@ -57,13 +57,12 @@
   }
 
   $img-width = 115px;
-  $img-height = $img-width * 1.4135;
+  $img-height = 163px// $img-width * 1.4135;
 
   .home--each-box {
     height: $img-height + 50px;
     padding-left: 20px;
-
-    // border-bottom: 1px solid red;
+    border-bottom: 1px solid #E4E7ED
     &:hover {
       hover-box();
     }
@@ -72,8 +71,7 @@
       height: $img-height;
       padding-top: 25px;
       padding-bottom: 25px;
-      border-bottom: 1px solid #ccc;
-      
+      // border-bottom: 1px solid #ccc;
       .each-img-box {
         width: $img-width;
         float: left;
@@ -91,24 +89,23 @@
 
         .each-title {
           width: 260px;
-          height: 56px;
+          height: 3 * 28px;
           overflow: hidden;
-          font-size: 1.2em;
+          font-size: 1.142rem;
           line-height: 28px;
+          // background-color #eee
         }
 
         .desc-detail {
-          margin-top: 15px;
-          font-size: 14px;
-
+          margin-top: 8px;
+          font-size: 0.875rem;
           .desc--each {
             line-height: 20px;
             overflow: hidden;
             color: #a0a3a9;
-
             span {
-              font-size: 14px;
-              color: #606266;
+              font-size: 1rem;
+              color: #737477;
             }
           }
         }
@@ -147,7 +144,7 @@
 
   .home--null-box{
     height 300px 
-    border-bottom 1px solid #ccc
+    border-bottom 1px solid #E4E7ED
     .home--null-tip{
       text-align: center
       color #909399

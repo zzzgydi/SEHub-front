@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="default-container">
     <simple-header title="学院活动"></simple-header>
     <div class="home-container">
       <div class="home-box">
@@ -24,14 +24,14 @@
         </div>
         <div v-else>
           <transition-group name="slide-fade" tag="div">
-            <div v-for="act in activitiesArr" :key="act.id">
-              <div class="home--each-box">
+            <div v-for="act in activitiesArr" :key="act.id" class="test">
+              <div class="home--each-box" @click="$router.push('/home/activity/'+act.id)">
                 <div class="each-box">
                   <div class="each-img-box">
                     <img src="../../../public/timg_2.jpg" alt width="115px">
                   </div>
                   <div class="each-text-box">
-                    <div class="each-title">{{act.id}}: {{act.title}}</div>
+                    <div class="each-title">{{act.title}}</div>
                     <div class="desc-detail">
                       <div class="desc--each">
                         • 活动时间：
