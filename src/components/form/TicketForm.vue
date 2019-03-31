@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-form v-model="applyForm" ref="applyForm" label-width="80px">
+    <el-form v-model="applyForm" ref="applyForm" label-width="95px">
       <el-form-item label="活动名称">
         <el-input v-model="applyForm.actname" class="apy-input-normal"></el-input>
       </el-form-item>

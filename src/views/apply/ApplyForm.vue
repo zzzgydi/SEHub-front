@@ -68,8 +68,14 @@ export default {
   methods: {
     applyPreview () {
       if (!this.formTitle) return
-      this.isPreview = true
-      this.previewObj = this.$refs.apyForm.getPreviewForm()
+
+      this.previewObj = this.$refs['apyForm'].getPreviewForm()
+      console.log(this.$refs['apyForm'].getPreviewForm())
+      if (this.previewObj) {
+        this.isPreview = true
+      } else {
+        this.$message.error('请正确填写表单')
+      }
     },
     applySubmit () {
       console.log(this.$refs.apyForm.getForm())

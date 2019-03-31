@@ -20,6 +20,7 @@ export default {
 $widow_width = 900px;
 
 .header-box {
+  not-select();
   width: $widow_width;
   height: 36px;
   line-height: 36px;

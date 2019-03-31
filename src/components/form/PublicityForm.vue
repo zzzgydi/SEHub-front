@@ -1,7 +1,7 @@
 <!-- 宣传物资申请 -->
 <template>
   <div>
-    <el-form :model="applyForm" ref="applyForm" label-width="80px">
+    <el-form :model="applyForm" :rules="rules" ref="applyForm" label-width="80px">
       <el-form-item label="活动名称">
         <el-input v-model="applyForm.actname" class="apy-input-normal"></el-input>
       </el-form-item>
@@ -11,7 +11,7 @@
       <el-form-item label="活动时间">
         <el-date-picker v-model="applyForm.acttime" type="date" value-format="yyyy-MM-dd"></el-date-picker>
       </el-form-item>
-      <el-form-item label="交付时间">
+      <el-form-item label="交付时间" prop="dlytime">
         <el-date-picker v-model="applyForm.dlytime" type="date" value-format="yyyy-MM-dd"></el-date-picker>
         <span style="color: #909399">&emsp;&emsp;// 预计完成时间</span>
       </el-form-item>
@@ -25,12 +25,17 @@
         ></el-input>
       </el-form-item>
       <div class="apy-form-dashed"></div>
-      <el-form-item v-for="(need,index) in applyForm.pubneeds" :label="'物资'+(index+1)" :key="index">
+      <el-form-item
+        prop="pubneeds"
+        v-for="(need,index) in applyForm.pubneeds"
+        :label="'物资'+(index+1)"
+        :key="index"
+      >
         <el-input v-model="need.name" class="apy-input-mini"></el-input>
         <span>&emsp;大小&ensp;</span>
         <el-input v-model="need.size" class="apy-pub-input-mini"></el-input>
         <span>&emsp;数量&ensp;</span>
-        <el-input v-model="need.num" class="apy-pub-input-mini"></el-input>
+        <el-input v-model.number="need.num" class="apy-pub-input-mini"></el-input>
         <span>&emsp;</span>
         <el-button
           type="danger"
@@ -88,6 +93,9 @@ export default {
         }],
         pubcontent: '',
         pubothers: ''
+      },
+      rules: {
+        dlytime: [{ required: true, message: '请输入预计交付时间' }]
       }
     }
   },
@@ -102,32 +110,37 @@ export default {
       return this.applyForm
     },
     getPreviewForm () {
-      var previewObj = { title: '宣传物资申请',
-        content: {
-          postname: this.$store.state.user.name,
-          postdapart: this.$store.state.user.depart,
-          posttime: new Date().toLocaleString(),
-          actname: this.applyForm.actname,
-          actaddr: this.applyForm.actaddr,
-          acttime: this.applyForm.acttime,
-          dlytime: this.applyForm.dlytime,
-          pubintro: this.applyForm.pubintro,
-          pubneeds: '',
-          pubcontent: this.applyForm.pubcontent,
-          pubothers: this.applyForm.pubothers
+      var previewObj = null
+      this.$refs['applyForm'].validate((valid) => {
+        if (valid) {
+          previewObj = { title: '宣传物资申请',
+            content: {
+              postname: this.$store.state.user.name,
+              postdapart: this.$store.state.user.depart,
+              posttime: new Date().toLocaleString(),
+              actname: this.applyForm.actname,
+              actaddr: this.applyForm.actaddr,
+              acttime: this.applyForm.acttime,
+              dlytime: this.applyForm.dlytime,
+              pubintro: this.applyForm.pubintro,
+              pubneeds: '',
+              pubcontent: this.applyForm.pubcontent,
+              pubothers: this.applyForm.pubothers
+            }
+          }
+          if (this.applyForm.pubneeds.length === 0) {
+            previewObj.content.pubneeds = '无'
+          } else if (this.applyForm.pubneeds.length === 1) {
+            let val = this.applyForm.pubneeds[0]
+            previewObj.content.pubneeds = val.name + '  大小：' + val.size + '  数量：' + val.num
+          } else {
+            previewObj.content.pubneeds = []
+            for (let i of this.applyForm.pubneeds) {
+              previewObj.content.pubneeds.push(i.name + '  大小：' + i.size + '  数量：' + i.num)
+            }
+          }
         }
-      }
-      if (this.applyForm.pubneeds.length === 0) {
-        previewObj.content.pubneeds = '无'
-      } else if (this.applyForm.pubneeds.length === 1) {
-        let val = this.applyForm.pubneeds[0]
-        previewObj.content.pubneeds = val.name + '  大小：' + val.size + '  数量：' + val.num
-      } else {
-        previewObj.content.pubneeds = []
-        for (let i of this.applyForm.pubneeds) {
-          previewObj.content.pubneeds.push(i.name + '  大小：' + i.size + '  数量：' + i.num)
-        }
-      }
+      })
       return previewObj
     }
   }
