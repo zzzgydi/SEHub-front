@@ -1,59 +1,109 @@
-.regs-header
-  font-size 26px
-  padding 15px
-  color #fff
-  background-color #409EFF
+@import '../../assets/css/default'
 
 
 regs_width = 900px
-moblie_width = 370px
-editor_width = 400px
+moblie_width = 320px
+editor_width = 520px
 
-.regs
+.regs-container
   width regs_width
-  margin 0 auto
-  .el-main
-    margin 0
-    padding 0
-
-
-.regs-edit-main
-  margin-left 50px
+  margin-bottom 30px
+  display flex
+  justify-content space-between
 
 .regs-editor-box
   width editor_width
-  margin-top 30px
+  //height 640px
+  //overflow-y: auto
+  border-box()
 
-.regs-edit-newbtn-box
-  width 120px
-  margin 20px auto
+.regs-editor-inner
+  padding 30px 20px 20px 20px
 
-.regs-edit-item-label
-  margin-bottom 5px
-  span
-    margin-right 250px
-    font-size 20px
+.editor-head
+  display flex
+  justify-content: space-between
+  padding-bottom: 20px
+  border-bottom 1px solid $color_border
+  .editor-head-label
+    width 100px
+    font-size: 1.125rem
+    line-height 36px
+    text-align: center
+  .editor-head-input
+    width 360px
+
+.editor-form
+  .each-box
+    // border-bottom 1px solid $color_border
+    padding-top 20px
+    padding-bottom: 20px
+
+.each-box-head
+  display: flex
+  justify-content: space-between
+  padding-bottom: 8px
+  .each--title
+    font-size: 1.125rem
+    line-height 27px
+
+.each-box-value
+  display: flex
+  justify-content: space-around
+  .each-value-label
+    padding-left 10px
+    line-height 36px
+    color #909399
+  .each-value-input
+    width 370px
+
+.regs-btn-box
+  width 320px
+  margin 0 auto 30px auto
+  display: flex
+  justify-content: space-between
+  .new-btn
+    width: 140px
+  .submit-btn
+    width: 140px
+
+// 动画
+
+.slide-fade-enter-active {
+  transition: all 0.8s ease;
+}
+
+.slide-fade-leave-active{
+  transition: all 0.5s ease;
+}
+
+.slide-fade-enter, .slide-fade-leave-to{
+  transform: translateX(10px);
+  opacity: 0;
+}
 
 
-.regs-edit-item-label-fix1
-  span
-    margin-right 230px
-
-.simulate-moblie-box
-  margin-top 20px
-  margin-left 80px
-
-
+// 模拟
 .simulate-moblie
-  width 350px
-  min-height 600px
-  padding 18px 10px 24px 10px
-  border solid 1px black
-  border-radius 20px
-  background-color #333333
+  width moblie_width
+  height 520px
+  padding 18px 10px 60px 10px
+  border-radius(20px)
+  background-color #303133
+  position relative
 
 .simulate-moblie-screen
-  min-height 600px
-  border solid 1px black
-  border-radius 5px
+  height 520px
+  border-radius(5px)
   background-color #ffffff
+  overflow-y: auto
+
+.simulate-moblie:after
+  content: ''
+  position absolute
+  border-radius(50%)
+  width 45px
+  height 45px
+  bottom 10px
+  left 147.5px
+  background-color #707177

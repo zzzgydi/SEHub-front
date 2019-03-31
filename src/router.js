@@ -40,10 +40,10 @@ export default new Router({
     }, {
       path: '/apply/:id',
       component: () => import('./views/apply/ApplyForm.vue')
+    }, {
+      path: '/others/regsys',
+      component: () => import('./views/module/RegSys.vue')
     }]
-  }, {
-    path: '/module/regsys',
-    component: () => import('./views/module/RegSys.vue')
   }]
 })
 /*

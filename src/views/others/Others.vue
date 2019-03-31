@@ -3,16 +3,14 @@
     <simple-header title="其他"></simple-header>
     <div class="module-container">
       <div class="module-list-box">
-        <div class="module-regsys-box">
+        <div class="regsys-box" @click="handleClick('regsys')">
           <div class="regsys-animation-box">
             <div class="ra--book">
               <div class="ra-book-word"></div>
               <div class="ra-book-word2"></div>
             </div>
-            <div class="ra--pencil">
-              <div class="ra-pen-nib"></div>
-            </div>
           </div>
+          <div class="regsys-title">报名表设计</div>
         </div>
       </div>
     </div>
@@ -26,6 +24,13 @@ export default {
     }
   },
   methods: {
+    handleClick (item) {
+      switch (item) {
+        case 'regsys':
+          this.$router.push('/others/regsys')
+          break
+      }
+    }
   }
 }
 </script>

@@ -2,65 +2,81 @@
 
 .module-container
   width 900px
-  // background-color red
-
-.module-regsys-box
-  width 260px
-  height 300px
-  border-box()
+  .module-list-box
+    display: flex
+    justify-content space-between
 
 
 //
 ra-book-word()
-  width 45px
+  transition: all 250ms linear
+  width 46px
   height 3px
   background-color black
   content: ''
   position absolute
   left 2px
 
-//
+_book_height = 60px
+_spans = _book_height / 5
+.ra--book
+  width 50px
+  height _book_height
+  border-radius(10px)
+  border 2px solid #606266
+  .ra-book-word, .ra-book-word2
+    position relative
+  .ra-book-word:before, .ra-book-word:after,
+  .ra-book-word2:before, .ra-book-word2:after
+    ra-book-word()
+  .ra-book-word:before
+    top _spans * 1
+    background-color #C0C4CC
+  .ra-book-word:after
+    top _spans * 2
+    background-color #909399
+  .ra-book-word2:before
+    top _spans * 3
+    background-color #606266
+  .ra-book-word2:after
+    top _spans * 4
+    background-color #303133
 
 .regsys-animation-box
-  position relative
+  width 50px
+  margin 28px auto 12px auto
 
-  .ra--book
-    width 50px
-    height 60px
-    border-radius(10px)
-    border 3px solid black
+.regsys-title
+  font-size 1.125rem
+  text-align: center
+  line-height 40px
+  // background-color #eee000
+  // margin-bottom 10px
 
-    .ra-book-word
-      position relative
-      &:before
-        ra-book-word()
-        top 12px
-      &:after
-        ra-book-word()
-        top 24px
-    .ra-book-word2
-      position relative
-      &:before
-        ra-book-word()
-        top 36px
-      &:after
-        ra-book-word()
-        top 48px
-
-  .ra--pencil
-    width 40px
-    height 10px
-    border-top 3px solid black
-    border-bottom 3px solid black 
-  
-  .ra-pen-nib
-    position relative
-    left 20px
-    &:before
-      content: ''
-      position absolute
-      height 3px
-      width 15px
-      background-color black
-
-    
+.regsys-box
+  width 260px
+  height 160px
+  border-box()
+  &:hover
+    hover-box()
+    .ra--book
+      border-color: $color_default
+    .ra-book-word:before,
+    .ra-book-word:after
+      transition: all 250ms ease
+      transform: translateY(2*_spans)
+    .ra-book-word2:before,
+    .ra-book-word2:after
+      transition: all 250ms ease
+      transform: translateY(-2*_spans)
+    .ra-book-word2:before
+      background-color $color_submit
+    .ra-book-word2:after
+      background-color $color_check
+    .ra-book-word:before
+      background-color $color_default
+    .ra-book-word:after
+      background-color $color_theme
+    .regsys-title
+      font-size: 1.375rem
+      color $color_default
