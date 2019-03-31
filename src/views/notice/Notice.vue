@@ -5,7 +5,11 @@
       <div class="notice-box-wait">
         <div class="notice--wait-title">待处理</div>
         <div class="notice--wait-content">
-          <div class="notice--wait-each" v-for="(item, idx) in waitArr" :key="idx">
+          <div v-if="isArrNull" class="notice-null-box">
+            <div class="null-box">NULL</div>
+            <div class="text-box">暂无通知</div>
+          </div>
+          <div v-else class="notice--wait-each" v-for="(item, idx) in waitArr" :key="idx">
             <div class="notice---from">{{item.fromDepart}}&ensp;{{item.fromName}}</div>
             <div class="notice---title">{{item.title}}</div>
             <div class="notice---state">{{item.state}}</div>
@@ -34,6 +38,14 @@ export default {
         time: '2019-3-30'
       }]
     }
+  },
+  computed: {
+    isArrNull: function () {
+      return this.waitArr.length === 0
+    }
+  },
+  beforeMount () {
+    // 更新数据
   }
 }
 </script>
