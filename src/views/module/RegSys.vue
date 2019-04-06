@@ -1,6 +1,6 @@
 <template>
   <div class="default-container">
-    <simple-header title="表单设计"></simple-header>
+    <simple-header title="报名表设计"></simple-header>
     <div class="regs-container">
       <div class="regs-editor-box">
         <div class="regs-editor-inner">
@@ -10,7 +10,7 @@
           </div>
           <div class="editor-form">
             <transition-group name="slide-fade" tag="div">
-              <div v-for="(regs, idx) in regsArr" :key="idx" class="each-box">
+              <div v-for="(regs, idx) in regsArr" :key="idx + regs.type" class="each-box">
                 <!-- input -->
                 <div v-if="regs.type === 'input'">
                   <div class="each-box-head">

@@ -22,13 +22,12 @@ $widow_width = 900px;
 .header-box {
   not-select();
   width: $widow_width;
-  height: 36px;
-  line-height: 36px;
+  height: 40px;
+  line-height: 40px;
   text-align: center;
   font-size: 1.75rem;
   color: #202124;
-  margin-top: 24px;
-  // margin-left: 60px;
+  margin-top: 30px;
   margin-bottom: 30px;
   // border-box();
 }

@@ -31,14 +31,18 @@
 export default {
   data () {
     return {
-      active: '/home/u',
+      active: '/home',
       paths: [{
         name: '首页',
         path: '/home',
         iclass: 'el-icon-date'
       }, {
-        name: '部门安排',
-        path: '/work',
+        name: '新首页',
+        path: '/newhome',
+        iclass: 'el-icon-date'
+      }, {
+        name: '部门中心',
+        path: '/center',
         iclass: 'el-icon-star-off'
       }, {
         name: '部门通知',
@@ -87,5 +91,4 @@ export default {
   }
 }
 </script>
-<style lang="stylus" scoped src="./SideBarNew.styl">
-</style>
+<style lang="stylus" scoped src="./SideBarNew.styl"></style>

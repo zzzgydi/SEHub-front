@@ -51,13 +51,13 @@ export default {
       position: fixed;
       top: 0;
       bottom: 0;
-      width: 280px;
+      width: 240px;
     }
 
     .right-box {
       position: fixed;
       top: 0;
-      left: 280px;
+      left: 240px;
       right: 0;
       bottom: 0;
       overflow-y: scroll;
