@@ -58,5 +58,4 @@ export default {
 
 }
 </script>
-<style lang="stylus" scoped src="./apply.styl">
-</style>
+<style lang="stylus" scoped src="./apply.styl"></style>

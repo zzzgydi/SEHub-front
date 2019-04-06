@@ -49,3 +49,56 @@
   margin-top 20px
   border-box()
 }
+
+.home--null-box{
+  not-select()
+  .home--null-tip{
+    text-align: center
+    color #909399
+    margin-top 200px
+  }
+}
+
+.mag-glass-box{
+  position relative
+  top 150px
+  .mag-null{
+    line-height 45px
+    font-weight: bold
+    font-size 1.8em
+    color #C0C4CC
+    text-align center
+  }
+  $x = 12px
+  $y = -65px
+  $glass_color = #909399
+  @keyframes mag_animation {
+    0%{ transform: translate(0px + $x, 0px + $y); }
+    29% { transform: translate(-21px + $x, 21px + $y); }
+    71% { transform: translate(21px + $x, 21px + $y); }
+    100%{ transform: translate(0px + $x, 0px + $y); }
+  }
+  .mag-glass{
+    left 410px
+    width 40px
+    height 40px
+    background-color rgba(200, 200, 200, 0.3)
+    border 6px solid $glass_color
+    border-radius(50%)
+    position: absolute
+    z-index 50
+    animation: mag_animation 1.8s linear
+    animation-iteration-count: infinite
+    &:before{
+      position: absolute
+      content: ""
+      width 30px
+      height 7px
+      background-color $glass_color
+      transform: rotate(45deg)
+      top 43px
+      left 29px
+      border-radius(3px)
+    }
+  }
+}

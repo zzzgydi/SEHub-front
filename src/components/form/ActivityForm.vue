@@ -88,7 +88,7 @@ export default {
       rules: {
         actname: [{ required: true, message: '请输入活动名称' }],
         actaddr: [{ required: true, message: '请选择活动区域' }],
-        acttime: [{ type: 'date', required: true, message: '请选择活动日期' }],
+        // acttime: [{ type: 'date', required: true, message: '请选择活动日期' }],
         actback: [{ required: true, message: '请输入活动背景' }],
         actaim: [{ required: true, message: '请输入活动目的' }],
         hostunit: [{ required: true, message: '请输入活动主办单位' }],
@@ -98,13 +98,12 @@ export default {
     }
   },
   methods: {
-    getApplyForm () {
+    getSubmitForm () {
+      var getValid = null
       this.$refs.applyForm.validate((valid) => {
-        if (valid) {
-          return this.applyForm
-        }
-        return null
+        getValid = valid
       })
+      return getValid ? this.applyForm : null
     },
     getPreviewForm () {
       var previewObj = null

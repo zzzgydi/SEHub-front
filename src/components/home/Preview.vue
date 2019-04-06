@@ -37,7 +37,7 @@
           </div>
         </div>
         <div class="preview-btn-box">
-          <el-button class="preview-btn">确认发送</el-button>
+          <el-button class="preview-btn" @click="previewSubmit()">确认发送</el-button>
         </div>
       </div>
     </div>
@@ -67,9 +67,11 @@ export default {
       var arr = [...valArr]
       arr.splice(0, 1)
       return arr
+    },
+    previewSubmit () {
+      this.$emit('preview_submit')
     }
   }
 }
 </script>
-<style lang="stylus" scoped src="./Preview.styl">
-</style>
+<style lang="stylus" scoped src="./Preview.styl"></style>

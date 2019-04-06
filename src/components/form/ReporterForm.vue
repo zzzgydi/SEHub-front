@@ -54,8 +54,12 @@ export default {
     }
   },
   methods: {
-    getApplyForm () {
-      return this.applyForm
+    getSubmitForm () {
+      var getValid = null
+      this.$refs.applyForm.validate((valid) => {
+        getValid = valid
+      })
+      return getValid ? this.applyForm : null
     },
     getPreviewForm () {
       var previewObj = {

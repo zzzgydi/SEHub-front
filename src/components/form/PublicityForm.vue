@@ -106,8 +106,12 @@ export default {
     delApyNeeds (index) {
       this.applyForm.pubneeds.splice(index, 1)
     },
-    getApplyForm () {
-      return this.applyForm
+    getSubmitForm () {
+      var getValid = null
+      this.$refs.applyForm.validate((valid) => {
+        getValid = valid
+      })
+      return getValid ? this.applyForm : null
     },
     getPreviewForm () {
       var previewObj = null

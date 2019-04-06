@@ -15,7 +15,11 @@
     </div>
     <transition name="preview-fade">
       <div v-if="isPreview" class="preview-container">
-        <preivew :pvdata="previewObj" @preview_close="isPreview = false"></preivew>
+        <preivew
+          :pvdata="previewObj"
+          @preview_close="isPreview = false"
+          @preview_submit="applySubmit"
+        ></preivew>
       </div>
     </transition>
   </div>
@@ -54,7 +58,7 @@ export default {
       let pathid = this.$route.params.id
       if (pathid && this.formTitle) {
         let name = pathid.charAt(0).toUpperCase() + pathid.substring(1)
-        return () => import('../../components/form/' + name + 'Form.vue')
+        return () => import('../../components/form/' + name + 'Form.vue') // 动态获取相应的表单组件
       } else { return '' }
     },
     matterID: function () {
@@ -70,7 +74,7 @@ export default {
       if (!this.formTitle) return
 
       this.previewObj = this.$refs['apyForm'].getPreviewForm()
-      console.log(this.$refs['apyForm'].getPreviewForm())
+      // console.log(this.$refs['apyForm'].getPreviewForm())
       if (this.previewObj) {
         this.isPreview = true
       } else {
@@ -78,7 +82,8 @@ export default {
       }
     },
     applySubmit () {
-      console.log(this.$refs.apyForm.getForm())
+      console.log(this.$refs['apyForm'])
+      console.log(this)
     }
   }
   // beforeRouteLeave (to, from, next) {

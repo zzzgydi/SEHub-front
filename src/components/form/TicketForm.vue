@@ -48,8 +48,12 @@ export default {
     }
   },
   methods: {
-    getApplyForm () {
-      return this.applyForm
+    getSubmitForm () {
+      var getValid = null
+      this.$refs.applyForm.validate((valid) => {
+        getValid = valid
+      })
+      return getValid ? this.applyForm : null
     },
     getPreviewForm () {
       var previewObj = {
@@ -72,5 +76,4 @@ export default {
 }
 </script>
 <style scoped lang="stylus" src="./form.styl"></style>
-<style lang="stylus" scoped>
-</style>
+<style lang="stylus" scoped></style>
