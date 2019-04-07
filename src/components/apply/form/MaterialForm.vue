@@ -79,7 +79,26 @@ export default {
       this.$refs.applyForm.validate((valid) => {
         getValid = valid
       })
-      return getValid ? this.applyForm : null
+      if (getValid) {
+        var needs = null
+        if (this.applyForm.needs.length === 0) {
+          needs = '无'
+        } else {
+          needs = []
+          for (let i of this.applyForm.needs) {
+            needs.push(i.name + '  数量：' + i.num)
+          }
+        }
+        return {
+          actname: this.applyForm.actname,
+          actaddr: this.applyForm.actaddr,
+          lendtime: this.applyForm.lendtime,
+          backtime: this.applyForm.backtime,
+          needs: needs,
+          others: this.applyForm.others
+        }
+      }
+      return null
     },
     getPreviewForm () {
       var previewObj = { title: '秘书物资申请', content: {} }

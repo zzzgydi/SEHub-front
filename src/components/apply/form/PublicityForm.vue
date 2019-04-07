@@ -111,7 +111,28 @@ export default {
       this.$refs.applyForm.validate((valid) => {
         getValid = valid
       })
-      return getValid ? this.applyForm : null
+      if (getValid) {
+        var needs = null
+        if (this.applyForm.pubneeds.length === 0) {
+          needs = '无'
+        } else {
+          needs = []
+          for (let i of this.applyForm.pubneeds) {
+            needs.push(i.name + '  大小：' + i.size + '  数量：' + i.num)
+          }
+        }
+        return {
+          actname: this.applyForm.actname,
+          actaddr: this.applyForm.actaddr,
+          acttime: this.applyForm.acttime,
+          dlytime: this.applyForm.dlytime,
+          actintro: this.applyForm.pubintro,
+          pubneeds: needs,
+          pubcontent: this.applyForm.pubcontent,
+          others: this.applyForm.pubothers
+        }
+      }
+      return null
     },
     getPreviewForm () {
       var previewObj = null

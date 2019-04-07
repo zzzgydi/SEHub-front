@@ -58,7 +58,17 @@ export default {
       this.$refs.applyForm.validate((valid) => {
         getValid = valid
       })
-      return getValid ? this.applyForm : null
+      if (getValid) {
+        return {
+          actname: this.applyForm.actname,
+          actaddr: this.applyForm.actaddr,
+          acttime: this.applyForm.acttime,
+          newddl: this.applyForm.newddl,
+          newwork: this.applyForm.newwork.join('；'),
+          others: this.applyForm.newothers
+        }
+      }
+      return null
     },
     getPreviewForm () {
       var previewObj = {

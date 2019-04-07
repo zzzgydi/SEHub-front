@@ -50,15 +50,6 @@
           class="apy-text-normal"
         ></el-input>
       </el-form-item>
-      <!-- <el-form-item label="启用服务" >
-        <el-switch v-model="applyForm.isServer" active-color="#13ce66"></el-switch>&emsp;&emsp;
-        <el-tooltip placement="right" effect="light">
-          <div slot="content">这是提示</div>
-          <span>
-            <i class="el-icon-info apy-tip"></i>
-          </span>
-        </el-tooltip>
-      </el-form-item>-->
       <el-form-item label="上传附件">
         <se-upload></se-upload>
       </el-form-item>
@@ -80,10 +71,7 @@ export default {
         actintro: '',
         hostunit: '华南理工大学软件学院',
         organizer: '',
-        target: '',
-        // isServer: false,
-        entertime: '',
-        enterddl: ''
+        target: ''
       },
       rules: {
         actname: [{ required: true, message: '请输入活动名称' }],
@@ -104,7 +92,20 @@ export default {
       this.$refs.applyForm.validate((valid) => {
         getValid = valid
       })
-      return getValid ? this.applyForm : null
+      if (getValid) {
+        return {
+          actname: this.applyForm.actname,
+          actaddr: this.applyForm.actaddr,
+          acttime: this.applyForm.acttime + ' ' + this.applyForm.acttime_more,
+          actback: this.applyForm.actback,
+          actaim: this.applyForm.actaim,
+          actintro: this.applyForm.actintro,
+          hostunit: this.applyForm.hostunit,
+          organizer: this.applyForm.organizer,
+          target: this.applyForm.target
+        }
+      }
+      return null
     },
     getPreviewForm () {
       var previewObj = null
