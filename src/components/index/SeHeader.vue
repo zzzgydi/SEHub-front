@@ -19,16 +19,27 @@ export default {
 
 $widow_width = 900px;
 
+// .header-box {
+// not-select();
+// width: $widow_width;
+// height: 40px;
+// line-height: 40px;
+// text-align: center;
+// font-size: 1.75rem;
+// color: #202124;
+// margin-top: 30px;
+// margin-bottom: 30px;
+// // border-box();
+// }
 .header-box {
   not-select();
   width: $widow_width;
   height: 40px;
   line-height: 40px;
   text-align: center;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   color: #202124;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   // border-box();
 }
 </style>

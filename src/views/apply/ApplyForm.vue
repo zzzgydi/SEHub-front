@@ -1,6 +1,6 @@
 <template>
-  <div style="margin-top: 0px;">
-    <simple-header :title="formTitle"></simple-header>
+  <div>
+    <div class="apy-header">{{formTitle}}</div>
     <div class="apy-container">
       <div class="apy-form-container">
         <!-- el-form -->
