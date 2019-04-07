@@ -1,5 +1,5 @@
 <template>
-  <div class="default-container">
+  <div>
     <simple-header title="活动详情"></simple-header>
   </div>
 </template>

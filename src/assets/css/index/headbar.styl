@@ -1,0 +1,49 @@
+@import '../default'
+
+.head-container
+  width 100%
+  height 100%
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1)
+  z-index: 1000
+  display: flex
+  justify-content: space-between
+
+.head-box {
+  // background: red;
+  .head-img-box {
+    width: 40px;
+    height: 30px;
+    float: left;
+    margin-left: 20px;
+    margin-top 10px;
+  }
+
+  .head-title-box {
+    float: left;
+    font-size: 1.125em;
+    line-height: 50px;
+    margin-left: 5px;
+    color: $color_black
+  }
+}
+
+.head-option-box{
+  width 120px
+  height 100%
+  // background-color red
+  not-select()
+
+  .option-person{
+    cursor: pointer
+    width 36px
+    height 36px
+    line-height 36px
+    margin-top 7px
+    font-size 1.125rem
+    background-color #dddddd
+    border-radius(50%)
+    text-align: center
+  }
+
+  
+}

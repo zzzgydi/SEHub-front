@@ -1,5 +1,5 @@
 <template>
-  <div class="default-container">
+  <div>
     <simple-header title="部门中心"></simple-header>
   </div>
 </template>

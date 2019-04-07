@@ -1,0 +1,67 @@
+@import '../default';
+
+.notice-container
+  width 900px
+
+.notice-box-wait
+  border-box()
+  not-select()
+  padding-bottom 30px
+  .notice--wait-title
+    font-size: 1.375rem
+    padding 20px 36px 15px
+    border-bottom: 1px solid $color_border
+
+
+  .notice--wait-content
+    .notice--wait-each
+      cursor pointer
+      padding 15px 36px 15px 36px
+      display flex
+      justify-content: space-between
+      border-bottom 1px solid $color_border
+      line-height 20px
+      overflow hidden
+
+      &:hover
+        hover-box()
+      
+      .notice---from
+        width: 180px
+        font-size: 1rem
+        font-weight: bold
+        color #616266
+
+      .notice---title
+        width: 300px
+        font-size: 1.125rem
+        color $color_black
+      
+      .notice---state
+        width: 45px
+        background-color $color_submit
+        border-radius(10px)
+        text-align: center
+        line-height 20px
+        height 20px
+        font-size: 0.75rem
+        color #fff
+      
+      .notice---time
+        font-size: 0.875rem
+        color #909399
+
+.notice-null-box
+  text-align: center
+  padding-bottom: 20px
+  // border-bottom: 1px solid $color_border
+  .null-box
+    font-size 1.75rem
+    color #909399
+    line-height 50px
+    margin-top 30px
+  
+  .text-box
+    font-size: 1.125rem
+    color #616266
+    

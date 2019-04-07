@@ -1,6 +1,6 @@
 <template>
-  <div class="default-container">
-    <simple-header title="其他"></simple-header>
+  <div>
+    <!-- <simple-header title="其他"></simple-header> -->
     <div class="module-container">
       <div class="module-list-box">
         <div class="regsys-box" @click="handleClick('regsys')">
@@ -27,12 +27,11 @@ export default {
     handleClick (item) {
       switch (item) {
         case 'regsys':
-          this.$router.push('/others/regsys')
+          // this.$router.push('/others/regsys')
           break
       }
     }
   }
 }
 </script>
-<style lang="stylus" scoped src="./others.styl">
-</style>
+<style lang="stylus" scoped src="../../assets/css/other/others.styl"></style>

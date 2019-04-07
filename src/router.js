@@ -15,9 +15,6 @@ export default new Router({
     component: () => import('./views/Index.vue'),
     children: [{
       path: '/home',
-      component: () => import('./views/home/Home_new.vue')
-    }, {
-      path: '/newhome',
       component: () => import('./views/home/Home.vue')
     }, {
       path: '/home/activity/:id',
@@ -29,26 +26,23 @@ export default new Router({
       path: '/depart',
       component: () => import('./views/others/Depart.vue')
     }, {
-      path: '/work',
-      component: () => import('./views/second/Work.vue')
-    }, {
       path: '/center',
       component: () => import('./views/second/Center.vue')
     }, {
       path: '/notice',
       component: () => import('./views/notice/Notice.vue')
     }, {
+      path: '/notice/detail/:id',
+      component: () => import('./views/notice/Detail.vue')
+    }, {
       path: '/others',
       component: () => import('./views/others/Others.vue')
     }, {
       path: '/apply',
-      component: () => import('./views/apply/Apply.vue')
+      component: () => import('./views/apply/ApplyHome.vue')
     }, {
       path: '/apply/:id',
       component: () => import('./views/apply/ApplyForm.vue')
-    }, {
-      path: '/others/regsys',
-      component: () => import('./views/module/RegSys.vue')
     }]
   }]
 })

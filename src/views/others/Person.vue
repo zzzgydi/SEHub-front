@@ -1,5 +1,5 @@
 <template>
-  <div class="default-container">
+  <div>
     <simple-header title="个人信息"></simple-header>
     <div class="person-container">
       <div class="person-box">
@@ -14,5 +14,4 @@ export default {
 
 }
 </script>
-<style lang="stylus" scoped src="./person.styl">
-</style>
+<style lang="stylus" scoped src="../../assets/css/other/person.styl"></style>

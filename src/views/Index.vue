@@ -1,11 +1,8 @@
 <template>
-  <div class="container">
-    <!-- <div class="head-box">
-      <div class="head-img-box">
-        <img src="../../public/scutse.png" alt width="40px">
-      </div>
-      <div class="head-title-box">SEHub</div>
-    </div>-->
+  <div class="index-container">
+    <div class="head-box">
+      <head-bar></head-bar>
+    </div>
     <div class="main-box">
       <div class="left-box">
         <side-bar></side-bar>
@@ -13,7 +10,9 @@
       <div class="right-box">
         <transition name="fade" mode="out-in">
           <keep-alive exclude="applyform">
-            <router-view></router-view>
+            <div class="index-right-box">
+              <router-view></router-view>
+            </div>
           </keep-alive>
           <!-- <router-view></router-view> -->
         </transition>
@@ -22,10 +21,12 @@
   </div>
 </template>
 <script>
-import SideBar from '../components/index/SideBarNew'
+import SideBar from '../components/index/SideBar.vue'
+import HeadBar from '../components/index/HeadBar.vue'
 export default {
   components: {
-    'side-bar': SideBar
+    'side-bar': SideBar,
+    'head-bar': HeadBar
   },
 
   beforeMount () {
@@ -40,36 +41,4 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.container {
-  min-width: 1150px;
-  width: 100%;
-  height: 100%;
-
-  .main-box {
-    .left-box {
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      width: 240px;
-    }
-
-    .right-box {
-      position: fixed;
-      top: 0;
-      left: 240px;
-      right: 0;
-      bottom: 0;
-      overflow-y: scroll;
-    }
-  }
-}
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.1s linear;
-}
-
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
-</style>
+<style lang="stylus" scoped src="../assets/css/index/index.styl"></style>

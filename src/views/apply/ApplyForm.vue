@@ -1,32 +1,20 @@
 <template>
-  <div class="default-container">
-    <div v-if="!isPreview">
-      <simple-header :title="formTitle"></simple-header>
-      <div class="apy-container">
-        <div class="apy-form-container">
-          <!-- el-form -->
-          <component ref="apyForm" :is="formID"></component>
-          <el-button class="apy-btn-submit" @click="applyPreview">提交</el-button>
-        </div>
-        <div class="apy-matter-container">
-          <component :is="matterID"></component>
-        </div>
+  <div style="margin-top: 0px;">
+    <simple-header :title="formTitle"></simple-header>
+    <div class="apy-container">
+      <div class="apy-form-container">
+        <!-- el-form -->
+        <component ref="apyForm" :is="formID"></component>
+        <el-button class="apy-btn-submit" @click="applySubmit">提交</el-button>
+      </div>
+      <div class="apy-matter-container">
+        <component :is="matterID"></component>
       </div>
     </div>
-    <transition name="preview-fade">
-      <div v-if="isPreview" class="preview-container">
-        <preivew
-          :pvdata="previewObj"
-          @preview_close="isPreview = false"
-          @preview_submit="applySubmit"
-        ></preivew>
-      </div>
-    </transition>
   </div>
 </template>
 <script>
-import Preview from '../../components/home/Preview.vue'
-
+import { apiApplyForm } from '../../api/apply.js'
 // 默认的申请表单参数
 const DefaultFormConfig = {
   activity: '活动申请',
@@ -41,13 +29,8 @@ const DefaultFormConfig = {
 
 export default {
   name: 'applyform',
-  components: {
-    'preivew': Preview
-  },
   data () {
     return {
-      isPreview: false,
-      previewObj: {}
     }
   },
   computed: {
@@ -58,32 +41,30 @@ export default {
       let pathid = this.$route.params.id
       if (pathid && this.formTitle) {
         let name = pathid.charAt(0).toUpperCase() + pathid.substring(1)
-        return () => import('../../components/form/' + name + 'Form.vue') // 动态获取相应的表单组件
+        return () => import('../../components/apply/form/' + name + 'Form.vue') // 动态获取相应的表单组件
       } else { return '' }
     },
     matterID: function () {
       let pathid = this.$route.params.id
       if (pathid && this.formTitle) {
         let name = pathid.charAt(0).toUpperCase() + pathid.substring(1)
-        return () => import('../../components/matters/' + name + 'Matter.vue')
+        return () => import('../../components/apply/matters/' + name + 'Matter.vue')
       } else { return '' }
     }
   },
   methods: {
-    applyPreview () {
+    applySubmit () {
       if (!this.formTitle) return
-
-      this.previewObj = this.$refs['apyForm'].getPreviewForm()
-      // console.log(this.$refs['apyForm'].getPreviewForm())
-      if (this.previewObj) {
-        this.isPreview = true
+      var form = this.$refs['apyForm'].getSubmitForm()
+      var that = this
+      if (form) {
+        apiApplyForm(form, () => {
+          that.$refs['apyForm'].clear()
+          that.$message.success('提交成功')
+        })
       } else {
         this.$message.error('请正确填写表单')
       }
-    },
-    applySubmit () {
-      console.log(this.$refs['apyForm'])
-      console.log(this)
     }
   }
   // beforeRouteLeave (to, from, next) {
@@ -93,4 +74,4 @@ export default {
   // }
 }
 </script>
-<style scoped lang="stylus" src="./apply.styl"></style>
+<style scoped lang="stylus" src="../../assets/css/apply/apply.styl"></style>

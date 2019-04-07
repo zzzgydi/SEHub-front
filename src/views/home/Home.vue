@@ -1,6 +1,6 @@
 <template>
-  <div class="default-container">
-    <simple-header title="学院活动"></simple-header>
+  <div>
+    <!-- <simple-header title="学院活动"></simple-header> -->
     <div class="option-box">
       <div :class="activeClass(1)" @click="handleOptionClick(1)">进行中</div>
       <div :class="activeClass(2)" @click="handleOptionClick(2)">筹备中</div>
@@ -58,4 +58,4 @@ export default {
   }
 }
 </script>
-<style lang="stylus" scoped src="./Home.styl"></style>
+<style lang="stylus" scoped src="../../assets/css/home/home.styl"></style>
