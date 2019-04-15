@@ -1,20 +1,20 @@
 <!-- 新媒体申请 -->
 <template>
   <div>
-    <el-form :model="applyForm" ref="applyForm" label-width="95px">
-      <el-form-item label="活动名称">
+    <el-form :model="applyForm" :rules="rules" ref="applyForm" label-width="95px">
+      <el-form-item label="活动名称" prop="actname">
         <el-input v-model="applyForm.actname" class="apy-input-normal"></el-input>
       </el-form-item>
-      <el-form-item label="活动地点">
+      <el-form-item label="活动地点" prop="actaddr">
         <el-input v-model="applyForm.actaddr" class="apy-input-normal"></el-input>
       </el-form-item>
-      <el-form-item label="活动时间">
+      <el-form-item label="活动时间" prop="acttime">
         <el-date-picker v-model="applyForm.acttime" type="date" value-format="yyyy-MM-dd"></el-date-picker>
       </el-form-item>
-      <el-form-item label="提交时间">
+      <el-form-item label="提交时间" prop="newddl">
         <el-date-picker v-model="applyForm.newddl" type="date" value-format="yyyy-MM-dd"></el-date-picker>
       </el-form-item>
-      <el-form-item label="申请项目">
+      <el-form-item label="申请项目" prop="newwork">
         <el-checkbox-group v-model="applyForm.newwork">
           <el-checkbox label="推送">推送</el-checkbox>
           <el-checkbox label="推送排版">推送排版</el-checkbox>
@@ -49,6 +49,13 @@ export default {
         newddl: '',
         newwork: [],
         others: ''
+      },
+      rules: {
+        actname: [{ required: true, message: '请输入活动名称' }],
+        actaddr: [{ required: true, message: '请选择活动区域' }],
+        acttime: [{ required: true, message: '请选择活动日期' }],
+        newddl: [{ required: true, message: '请输入提交时间' }],
+        newwork: [{ required: true, message: '请选择申请项目' }]
       }
     }
   },
@@ -60,6 +67,7 @@ export default {
       })
       if (getValid) {
         return {
+          type: 'newmedia',
           actname: this.applyForm.actname,
           actaddr: this.applyForm.actaddr,
           acttime: this.applyForm.acttime,

@@ -7,7 +7,7 @@
       <div class="head-title-box">软件学院团学管理平台</div>
     </div>
     <div class="head-option-box">
-      <el-dropdown @command="handleCommand">
+      <el-dropdown @command="handleCommand" trigger="click">
         <div class="option-person">{{personName}}</div>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item v-if="isAdmin" command="admin">管理员端</el-dropdown-item>

@@ -1,21 +1,21 @@
 <!--主持人申请-->
 <template>
   <div>
-    <el-form :model="applyForm" ref="applyForm" label-width="95px">
-      <el-form-item label="活动名称">
+    <el-form :model="applyForm" :rules="rules" ref="applyForm" label-width="95px">
+      <el-form-item label="活动名称" prop="actname">
         <el-input v-model="applyForm.actname" class="apy-input-normal"></el-input>
       </el-form-item>
-      <el-form-item label="活动地点">
+      <el-form-item label="活动地点" prop="actaddr">
         <el-input v-model="applyForm.actaddr" class="apy-input-normal"></el-input>
       </el-form-item>
-      <el-form-item label="活动时间">
+      <el-form-item label="活动时间" prop="acttime">
         <el-date-picker v-model="applyForm.acttime" type="date" value-format="yyyy-MM-dd"></el-date-picker>
       </el-form-item>
-      <el-form-item label="彩排时间">
+      <el-form-item label="彩排时间" prop="rehtime">
         <el-date-picker v-model="applyForm.rehtime" type="date" value-format="yyyy-MM-dd"></el-date-picker>
       </el-form-item>
-      <el-form-item label="申请人数">
-        <el-input v-model="applyForm.number" class="apy-input-normal"></el-input>
+      <el-form-item label="申请人数" prop="number">
+        <el-input v-model.number="applyForm.number" class="apy-input-normal"></el-input>
       </el-form-item>
       <el-form-item label="备注">
         <el-input
@@ -45,6 +45,13 @@ export default {
         rehtime: '', // 彩排时间
         number: '',
         others: ''
+      },
+      rules: {
+        actname: [{ required: true, message: '请输入活动名称' }],
+        actaddr: [{ required: true, message: '请输入活动区域' }],
+        acttime: [{ required: true, message: '请选择活动日期' }],
+        rehtime: [{ required: true, message: '请选择彩排时间' }],
+        number: [{ required: true, message: '请输入申请人数' }, { type: 'number', message: '请输入数字' }]
       }
     }
   },
@@ -56,6 +63,7 @@ export default {
       })
       if (getValid) {
         return {
+          type: 'presenter',
           actname: this.applyForm.actname,
           actaddr: this.applyForm.actaddr,
           acttime: this.applyForm.acttime,

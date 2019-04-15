@@ -1,20 +1,20 @@
 <!--记者团申请-->
 <template>
   <div>
-    <el-form :model="applyForm" ref="applyForm" label-width="95px">
-      <el-form-item label="活动名称">
+    <el-form :model="applyForm" :rules="rules" ref="applyForm" label-width="95px">
+      <el-form-item label="活动名称" prop="actname">
         <el-input v-model="applyForm.actname" class="apy-input-normal"></el-input>
       </el-form-item>
-      <el-form-item label="活动地点">
+      <el-form-item label="活动地点" prop="actaddr">
         <el-input v-model="applyForm.actaddr" class="apy-input-normal"></el-input>
       </el-form-item>
-      <el-form-item label="活动时间">
+      <el-form-item label="活动时间" prop="acttime">
         <el-date-picker v-model="applyForm.acttime" type="date" value-format="yyyy-MM-dd"></el-date-picker>
       </el-form-item>
-      <el-form-item label="提交时间">
+      <el-form-item label="提交时间" prop="repddl">
         <el-date-picker v-model="applyForm.repddl" type="date" value-format="yyyy-MM-dd"></el-date-picker>
       </el-form-item>
-      <el-form-item label="申请项目">
+      <el-form-item label="申请项目" prop="repwork">
         <el-checkbox-group v-model="applyForm.repwork">
           <el-checkbox label="新闻稿">新闻稿</el-checkbox>
           <el-checkbox label="拍照">拍照</el-checkbox>
@@ -50,6 +50,13 @@ export default {
         repddl: '',
         repwork: [],
         repothers: ''
+      },
+      rules: {
+        actname: [{ required: true, message: '请输入活动名称' }],
+        actaddr: [{ required: true, message: '请输入活动区域' }],
+        acttime: [{ required: true, message: '请选择活动日期' }],
+        repddl: [{ required: true, message: '请选择提交时间' }],
+        repwork: [{ required: true, message: '请选择申请项目' }]
       }
     }
   },
@@ -61,6 +68,7 @@ export default {
       })
       if (getValid) {
         return {
+          type: 'reporter',
           actname: this.applyForm.actname,
           actaddr: this.applyForm.actaddr,
           acttime: this.applyForm.acttime,

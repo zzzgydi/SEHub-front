@@ -55,6 +55,7 @@ export default {
       })
       if (getValid) {
         return {
+          type: 'ticket',
           actname: this.applyForm.actname,
           actaddr: this.applyForm.actaddr,
           acttime: this.applyForm.acttime,

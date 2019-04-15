@@ -1,6 +1,6 @@
 <template>
   <div>
-    <simple-header title="部门中心"></simple-header>
+    <simple-header title="Nothing"></simple-header>
   </div>
 </template>
 <script>

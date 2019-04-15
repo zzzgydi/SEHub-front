@@ -2,34 +2,38 @@
 <template>
   <div>
     <el-form :model="applyForm" :rules="rules" ref="applyForm" label-width="80px">
-      <el-form-item label="活动名称">
+      <el-form-item label="活动名称" prop="actname">
         <el-input v-model="applyForm.actname" class="apy-input-normal"></el-input>
       </el-form-item>
-      <el-form-item label="活动地点">
+      <el-form-item label="活动地点" prop="actaddr">
         <el-input v-model="applyForm.actaddr" class="apy-input-normal"></el-input>
       </el-form-item>
-      <el-form-item label="活动时间">
+      <el-form-item label="活动时间" prop="acttime">
         <el-date-picker v-model="applyForm.acttime" type="date" value-format="yyyy-MM-dd"></el-date-picker>
       </el-form-item>
       <el-form-item label="交付时间" prop="dlytime">
-        <el-date-picker v-model="applyForm.dlytime" type="date" value-format="yyyy-MM-dd"></el-date-picker>
-        <span style="color: #909399">&emsp;&emsp;// 预计完成时间</span>
+        <el-date-picker
+          v-model="applyForm.dlytime"
+          type="date"
+          value-format="yyyy-MM-dd"
+          placeholder="预计完成时间"
+        ></el-date-picker>
       </el-form-item>
-      <el-form-item label="活动简介">
+      <el-form-item label="活动简介" prop="pubintro">
         <el-input
           type="textarea"
           rows="5"
-          v-model="applyForm.intro"
+          v-model="applyForm.pubintro"
           resize="none"
           class="apy-text-normal"
         ></el-input>
       </el-form-item>
       <div class="apy-form-dashed"></div>
       <el-form-item
-        prop="pubneeds"
         v-for="(need,index) in applyForm.pubneeds"
-        :label="'物资'+(index+1)"
+        :label="'物资   '+(index+1)"
         :key="index"
+        prop="pubneeds"
       >
         <el-input v-model="need.name" class="apy-input-mini"></el-input>
         <span>&emsp;大小&ensp;</span>
@@ -41,6 +45,7 @@
           type="danger"
           icon="el-icon-delete"
           circle
+          plain
           size="mini"
           @click="delApyNeeds(index)"
         ></el-button>
@@ -50,7 +55,7 @@
         <i class="el-icon-circle-plus-outline"></i>
       </el-button>
       <div class="apy-form-dashed" style="margin-top:25px;"></div>
-      <el-form-item label="文字内容">
+      <el-form-item label="文字内容" prop="pubcontent">
         <el-input
           type="textarea"
           rows="5"
@@ -95,7 +100,13 @@ export default {
         pubothers: ''
       },
       rules: {
-        dlytime: [{ required: true, message: '请输入预计交付时间' }]
+        actname: [{ required: true, message: '请输入活动名称' }],
+        actaddr: [{ required: true, message: '请输入活动区域' }],
+        acttime: [{ required: true, message: '请选择活动日期' }],
+        dlytime: [{ required: true, message: '请选择预计交付时间' }],
+        pubintro: [{ required: true, message: '请输入活动简介' }],
+        pubneeds: [{ required: true }],
+        pubcontent: [{ required: true, message: '请输入文字内容' }]
       }
     }
   },
@@ -122,6 +133,7 @@ export default {
           }
         }
         return {
+          type: 'publicity',
           actname: this.applyForm.actname,
           actaddr: this.applyForm.actaddr,
           acttime: this.applyForm.acttime,
@@ -169,6 +181,7 @@ export default {
       return previewObj
     },
     clear () {
+      this.applyForm.pubneeds = [{ need: '', size: '', num: '' }]
       this.$refs['applyForm'].resetFields()
     }
   }

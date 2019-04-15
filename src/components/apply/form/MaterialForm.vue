@@ -1,21 +1,26 @@
 <!--秘书部物资申请-->
 <template>
   <div>
-    <el-form v-model="applyForm" ref="applyForm" label-width="95px">
-      <el-form-item label="活动名称">
+    <el-form :model="applyForm" :rules="rules" ref="applyForm" label-width="95px">
+      <el-form-item label="活动名称" prop="actname">
         <el-input v-model="applyForm.actname" class="apy-input-normal"></el-input>
       </el-form-item>
-      <el-form-item label="活动地点">
+      <el-form-item label="活动地点" prop="actaddr">
         <el-input v-model="applyForm.actaddr" class="apy-input-normal"></el-input>
       </el-form-item>
-      <el-form-item label="借用时间">
+      <el-form-item label="借用时间" prop="lendtime">
         <el-date-picker v-model="applyForm.lendtime" type="date" value-format="yyyy-MM-dd"></el-date-picker>
       </el-form-item>
-      <el-form-item label="归还时间">
+      <el-form-item label="归还时间" prop="backtime">
         <el-date-picker v-model="applyForm.backtime" type="date" value-format="yyyy-MM-dd"></el-date-picker>
       </el-form-item>
       <div class="apy-form-dashed"></div>
-      <el-form-item v-for="(need,index) in applyForm.needs" :label="'物资'+(index+1)" :key="index">
+      <el-form-item
+        prop="needs"
+        v-for="(need,index) in applyForm.needs"
+        :label="'物资   '+(index+1)"
+        :key="index"
+      >
         <el-input v-model="need.name" class="apy-input-medium"></el-input>
         <span>&emsp;&emsp;数量&ensp;</span>
         <el-input v-model="need.num" class="apy-pub-input-mini"></el-input>
@@ -24,6 +29,7 @@
           type="danger"
           icon="el-icon-delete"
           circle
+          plain
           size="mini"
           @click="delApyNeeds(index)"
         ></el-button>
@@ -34,7 +40,7 @@
       </el-button>
       <div class="apy-form-dashed" style="margin-top: 20px;"></div>
 
-      <el-form-item label="备注">
+      <el-form-item label="备  注">
         <el-input
           type="textarea"
           rows="5"
@@ -64,6 +70,13 @@ export default {
           num: ''
         }],
         others: ''
+      },
+      rules: {
+        actname: [{ required: true, message: '请输入活动名称' }],
+        actaddr: [{ required: true, message: '请输入活动区域' }],
+        lendtime: [{ required: true, message: '请选择借用时间' }],
+        backtime: [{ required: true, message: '请选择归还时间' }],
+        needs: [{ required: true }]
       }
     }
   },
@@ -90,6 +103,7 @@ export default {
           }
         }
         return {
+          type: 'material',
           actname: this.applyForm.actname,
           actaddr: this.applyForm.actaddr,
           lendtime: this.applyForm.lendtime,
@@ -125,6 +139,7 @@ export default {
       return previewObj
     },
     clear () {
+      this.applyForm.needs = [{ name: '', num: '' }]
       this.$refs['applyForm'].resetFields()
     }
   }

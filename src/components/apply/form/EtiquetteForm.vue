@@ -1,13 +1,13 @@
 <template>
   <div>
     <el-form :model="applyForm" :rules="etirules" ref="applyForm" label-width="95px">
-      <el-form-item label="活动名称">
+      <el-form-item label="活动名称" prop="actname">
         <el-input v-model="applyForm.actname" class="apy-input-normal"></el-input>
       </el-form-item>
-      <el-form-item label="活动地点">
+      <el-form-item label="活动地点" prop="actaddr">
         <el-input v-model="applyForm.actaddr" class="apy-input-normal"></el-input>
       </el-form-item>
-      <el-form-item label="活动时间">
+      <el-form-item label="活动时间" prop="acttime">
         <el-date-picker v-model="applyForm.acttime" type="date" value-format="yyyy-MM-dd"></el-date-picker>
       </el-form-item>
       <el-form-item label="申请人数" prop="etinum">
@@ -49,6 +49,9 @@ export default {
         others: ''
       },
       etirules: {
+        actname: [{ required: true, message: '请输入活动名称' }],
+        actaddr: [{ required: true, message: '请输入活动区域' }],
+        acttime: [{ required: true, message: '请选择活动日期' }],
         etinum: [{ required: true, message: '请输入申请人数' }, { type: 'number', message: '请输入数字' }],
         etiwork: [{ required: true, message: '请选择礼仪工作' }]
       }
@@ -62,6 +65,7 @@ export default {
       })
       if (getValid) {
         return {
+          type: 'etiquette',
           actname: this.applyForm.actname,
           actaddr: this.applyForm.actaddr,
           acttime: this.applyForm.acttime,

@@ -3,61 +3,8 @@
 .ndetail-cnt
   width: 900px
   padding-bottom: 20px
-  background-color #eee
-
-.ndetail-box
-  padding-top 10px
-  padding-left 20px
-  padding-right 20px
-  padding-bottom: 10px
-  border-box()
-  box-shadow: 1px 1px 2px #555
-
-.ndetail-head
-  font-size 1.5em
-  line-height: 80px
-  text-align: center
-  // background-color red
-  position relative
-
-.close-box
-  width 32px
-  height 32px
-  position absolute
-  top 10px
-  right 0px
-  border-radius(50%)
-  border 2px solid #909399
-  &:before,
-  &:after
-    position absolute
-    content: ''
-    width 22px
-    height 3px
-    background-color #909399
-    top 15px
-    right 4.6px
-    border-radius(5px)
-  
-  &:before
-    transition: all 250ms linear
-    transform: rotate(45deg)
-
-  &:after
-    transition: all 250ms linear
-    transform: rotate(-45deg)
-
-
-.close-box:hover
-  border-color: $color_theme
-  &:before
-    transition: all 250ms linear
-    background-color $color_theme
-    transform: rotate(135deg)
-  &:after
-    transition: all 250ms linear
-    background-color $color_theme
-    transform: rotate(45deg)
+  // background-color #eee
+  // border-box()
 
 // 表格参数
 $table_width = 750px
@@ -74,15 +21,13 @@ td
   border-top: $line_width solid $line_color;
 
 
-.ndetail-table-box
-  width 100%
-  .ndetail-table
-    width $table_width
-    margin 0 auto
+.ndetail-table
+  width $table_width
+  margin 0 auto
 
 .ndetail-td-title
-  font-size 1.2em
-  line-height 60px
+  font-size 1.375em
+  line-height 66px
 
 .ndetail-td-label
   width 120px
@@ -103,4 +48,25 @@ td
 
 
 .feedback-cnt
-  background-color #fff
+  width 900px
+  display flex
+  margin-top 20px
+  justify-content: space-around
+
+.feedback-input
+  width 680px
+  padding-left 20px
+  padding-right 20px
+  // background-color red
+
+.feedback-label
+  color $color_black
+  line-height 30px
+  span
+    color red
+
+.feedback-btn
+  // width 100px
+  // background-color blue
+  #btn1,#btn2
+    margin-top 20px

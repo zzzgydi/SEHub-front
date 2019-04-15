@@ -76,9 +76,10 @@ export default {
       rules: {
         actname: [{ required: true, message: '请输入活动名称' }],
         actaddr: [{ required: true, message: '请选择活动区域' }],
-        // acttime: [{ type: 'date', required: true, message: '请选择活动日期' }],
+        acttime: [{ required: true, message: '请选择活动日期' }],
         actback: [{ required: true, message: '请输入活动背景' }],
         actaim: [{ required: true, message: '请输入活动目的' }],
+        target: [{ required: true, message: '请输入活动对象' }],
         hostunit: [{ required: true, message: '请输入活动主办单位' }],
         actintro: [{ required: true, message: '请输入活动简介' }],
         organizer: [{ required: true, message: '请输入活动承办单位' }]
@@ -94,6 +95,7 @@ export default {
       })
       if (getValid) {
         return {
+          type: 'activity',
           actname: this.applyForm.actname,
           actaddr: this.applyForm.actaddr,
           acttime: this.applyForm.acttime + ' ' + this.applyForm.acttime_more,
