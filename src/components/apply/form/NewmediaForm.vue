@@ -70,7 +70,7 @@ export default {
           type: 'newmedia',
           actname: this.applyForm.actname,
           actaddr: this.applyForm.actaddr,
-          acttime: this.applyForm.acttime,
+          acttime: new Date(this.applyForm.acttime),
           newddl: this.applyForm.newddl,
           newwork: this.applyForm.newwork.join('；'),
           others: this.applyForm.newothers

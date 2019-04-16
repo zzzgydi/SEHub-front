@@ -44,5 +44,18 @@ export default new Router({
       path: '/apply/:id',
       component: () => import('./views/apply/ApplyForm.vue')
     }]
+  }, {
+    path: '/admin',
+    component: () => import('./admin/AdminLogin.vue')
+  }, {
+    path: '/admin/',
+    component: () => import('./admin/AdminIndex.vue'),
+    children: [{
+      path: '/admin/home',
+      component: () => import('./views/home/Home.vue')
+    }, {
+      path: '/admin/manage',
+      component: () => import('./admin/work/UserManage.vue')
+    }]
   }]
 })

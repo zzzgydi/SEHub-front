@@ -65,6 +65,8 @@ export default {
       } else {
         this.$message.error('请正确填写表单')
       }
+      // var t = new Date('2019-04-18 08:00:00')
+      // console.log(t)
     }
   }
   // beforeRouteLeave (to, from, next) {

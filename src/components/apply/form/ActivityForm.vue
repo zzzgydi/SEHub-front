@@ -34,12 +34,26 @@
       <el-form-item label="面向对象" prop="target">
         <el-input v-model="applyForm.target" class="apy-input-normal"></el-input>
       </el-form-item>
-      <el-form-item label="活动时间" prop="acttime">
-        <el-row>
+      <el-form-item label="开始时间" prop="acttime_s">
+        <el-date-picker
+          v-model="applyForm.acttime_s"
+          type="datetime"
+          placeholder="活动开始日期"
+          value-format="yyyy-MM-dd HH:mm"
+        ></el-date-picker>
+        <!-- <el-row>
           <el-date-picker v-model="applyForm.acttime" type="date" value-format="yyyy-MM-dd"></el-date-picker>
           <span>&emsp;时间段&emsp;</span>
           <el-input v-model="applyForm.acttime_more" class="apy-input-mini"></el-input>
-        </el-row>
+        </el-row>-->
+      </el-form-item>
+      <el-form-item label="结束时间" prop="acttime_e">
+        <el-date-picker
+          v-model="applyForm.acttime_e"
+          type="datetime"
+          placeholder="活动结束日期"
+          value-format="yyyy-MM-dd HH:mm"
+        ></el-date-picker>
       </el-form-item>
       <el-form-item label="活动简介" prop="actintro">
         <el-input
@@ -66,6 +80,8 @@ export default {
         actaddr: '',
         acttime: '',
         acttime_more: '',
+        acttime_s: '',
+        acttime_e: '',
         actback: '',
         actaim: '',
         actintro: '',
@@ -76,7 +92,8 @@ export default {
       rules: {
         actname: [{ required: true, message: '请输入活动名称' }],
         actaddr: [{ required: true, message: '请选择活动区域' }],
-        acttime: [{ required: true, message: '请选择活动日期' }],
+        acttime_s: [{ required: true, message: '请选择活动开始时间' }],
+        acttime_e: [{ required: true, message: '请选择活动结束时间' }],
         actback: [{ required: true, message: '请输入活动背景' }],
         actaim: [{ required: true, message: '请输入活动目的' }],
         target: [{ required: true, message: '请输入活动对象' }],
@@ -99,6 +116,8 @@ export default {
           actname: this.applyForm.actname,
           actaddr: this.applyForm.actaddr,
           acttime: this.applyForm.acttime + ' ' + this.applyForm.acttime_more,
+          acttime_s: new Date(this.applyForm.acttime_s),
+          acttime_e: new Date(this.applyForm.acttime_e),
           actback: this.applyForm.actback,
           actaim: this.applyForm.actaim,
           actintro: this.applyForm.actintro,

@@ -68,7 +68,7 @@ export default {
           type: 'etiquette',
           actname: this.applyForm.actname,
           actaddr: this.applyForm.actaddr,
-          acttime: this.applyForm.acttime,
+          acttime: new Date(this.applyForm.acttime),
           etinum: this.applyForm.etinum + '人',
           etiwork: this.applyForm.etiwork.join('；'),
           others: this.applyForm.others

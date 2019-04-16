@@ -71,13 +71,13 @@ export default {
           type: 'reporter',
           actname: this.applyForm.actname,
           actaddr: this.applyForm.actaddr,
-          acttime: this.applyForm.acttime,
-          repddl: this.applyForm.repddl,
+          acttime: new Date(this.applyForm.acttime),
+          repddl: new Date(this.applyForm.repddl),
           repwork: this.applyForm.repwork.join('；'),
           others: this.applyForm.repothers
         }
       }
-      return getValid ? this.applyForm : null
+      return null
     },
     getPreviewForm () {
       var previewObj = {

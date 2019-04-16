@@ -11,7 +11,10 @@
           label-width="0px"
           class="login-container"
         >
-          <h3 class="title">软件学院团学管理系统</h3>
+          <h3 class="title">
+            软件学院团学管理系统
+            <br>管理端
+          </h3>
           <el-form-item prop="account">
             <el-input
               type="text"
@@ -43,9 +46,6 @@
           </el-form-item>
         </el-form>
       </el-container>
-      <!-- <el-footer>
-      <span>2018&copy; 华南理工大学 软件学院团委学生会 版权所有</span>
-      </el-footer>-->
     </div>
   </div>
 </template>
@@ -74,31 +74,10 @@ export default {
         if (valid) {
           apiLogin(res => {
             console.log(res)
-            this.$store.commit('login')
-            this.$router.push('/home')
+            this.$store.commit('adminlogin')
+            this.$router.push('/admin/home')
             console.log(this.$store.state.isLogin)
           })
-          // Test API
-          // this.axios
-          //   .post('/api/login', {
-          //     stuid: this.ruleForm.account,
-          //     pwd: this.ruleForm.checkPass
-          //   })
-          //   .then(res => {
-          //     let state = res.data['state']
-          //     if (state == 0) {
-          //       this.$router.push('/stuunion')
-          //     } else if (state == 101) {
-          //       this.$message.error('账号不存在！')
-          //     } else if (state == 102) {
-          //       this.$message.error('密码错误！')
-          //     } else {
-          //       this.$message.error('调用出错！')
-          //     }
-          //   })
-          //   .catch(res => {
-          //     this.$message.error('登录出错！')
-          //   })
         }
       })
     }

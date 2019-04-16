@@ -21,7 +21,7 @@
 </template>
 <script>
 import SideBar from '../components/index/SideBar.vue'
-import HeadBar from '../components/index/HeadBar.vue'
+import HeadBar from '../components/index/AdminHeadBar.vue'
 export default {
   components: {
     'side-bar': SideBar,
@@ -29,35 +29,23 @@ export default {
   },
   data () {
     return {
-      paths: [{ // 定义边栏的跳转
+      paths: [ {
         name: '首页',
-        path: '/home',
+        path: '/admin/home',
         iclass: 'el-icon-date'
       }, {
-        name: '部门中心',
-        path: '/center',
-        iclass: 'el-icon-star-off'
-      }, {
-        name: '部门通知',
-        path: '/notice',
-        iclass: 'el-icon-bell'
-      }, {
-        name: '工作申请',
-        path: '/apply',
-        iclass: 'el-icon-document'
-      }, {
-        name: '其他',
-        path: '/others',
-        iclass: 'el-icon-news'
+        name: '用户管理',
+        path: '/admin/manage',
+        iclass: 'el-icon-date'
       }]
     }
   },
   beforeMount () {
-    if (this.$route.path === '/') {
-      if (this.$store.state.isLogin) {
-        this.$router.push('home')
+    if (this.$route.path === '/admin/') {
+      if (this.$store.state.isAdminLogin) {
+        this.$router.push('/admin/home')
       } else {
-        this.$router.push('login')
+        this.$router.push('/admin')
       }
     }
   }

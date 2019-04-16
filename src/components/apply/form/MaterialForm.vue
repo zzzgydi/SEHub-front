@@ -106,8 +106,8 @@ export default {
           type: 'material',
           actname: this.applyForm.actname,
           actaddr: this.applyForm.actaddr,
-          lendtime: this.applyForm.lendtime,
-          backtime: this.applyForm.backtime,
+          lendtime: new Date(this.applyForm.lendtime),
+          backtime: new Date(this.applyForm.backtime),
           needs: needs,
           others: this.applyForm.others
         }

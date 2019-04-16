@@ -66,8 +66,8 @@ export default {
           type: 'presenter',
           actname: this.applyForm.actname,
           actaddr: this.applyForm.actaddr,
-          acttime: this.applyForm.acttime,
-          rehtime: this.applyForm.rehtime,
+          acttime: new Date(this.applyForm.acttime),
+          rehtime: new Date(this.applyForm.rehtime),
           number: this.applyForm.number,
           others: this.applyForm.others
         }
