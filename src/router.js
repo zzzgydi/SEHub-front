@@ -7,6 +7,9 @@ export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [{
+    path: '/404',
+    component: () => import('./views/404.vue')
+  }, {
     path: '/login',
     component: () => import('./views/Login.vue')
   }, {
@@ -57,5 +60,8 @@ export default new Router({
       path: '/admin/manage',
       component: () => import('./admin/work/UserManage.vue')
     }]
+  }, {
+    path: '*',
+    component: () => import('./views/404.vue')
   }]
 })

@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <simple-header title="Nothing"></simple-header>
-  </div>
+  <div>Nothing</div>
 </template>
 <script>
 export default {

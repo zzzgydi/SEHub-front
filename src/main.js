@@ -13,6 +13,7 @@ Vue.config.productionTip = false
 Vue.use(VueAxios, axios)
 
 // Vue.component('simple-header', SeHeader)
+
 Vue.component('se-upload', SeUpload)
 new Vue({
   router,

@@ -56,9 +56,17 @@ Notice 表新增 sponsorName，sponsorDepart，time 三个字段
 - return:
   - state // 状态码
   - notices: array
+    - noticID
     - noticeType // 通知类型
     - sponsorName // 发起者姓名
     - sponsorDepart // 发起者所在部门
     - apyID // 表单 ID
     - time // 按时间先后排序返回
     - remarks // 通知的文字表述
+
+## 接口:获取通知详情
+
+- methods: POST
+- url: '/api/notices/detail'
+- params:
+  - id // 某个通知的 ID

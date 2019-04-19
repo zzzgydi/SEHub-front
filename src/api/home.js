@@ -1,4 +1,4 @@
-// import axios from 'axios'
+import axios from 'axios'
 
 var homeData = {
   ongoing: [{
@@ -76,8 +76,15 @@ var homeData = {
 
 // 登录
 export function apiLogin (callback) {
-  let yes = 'yes'
-  callback(yes)
+  let username = '201730683314'
+  let password = '123456'
+  let q = 'username=' + username + '&password=' + password
+  // let yes = 'yes'
+  axios.post('/api/login', q).then(res => callback(res.data))
+    .catch(error => {
+      console.log(error)
+    })
+  // callback(yes)
 }
 
 // 首页获取所有活动
