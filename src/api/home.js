@@ -84,7 +84,6 @@ export function apiLogin (callback) {
     .catch(error => {
       console.log(error)
     })
-  // callback(yes)
 }
 
 // 首页获取所有活动
