@@ -137,10 +137,10 @@ export default {
           actname: this.applyForm.actname,
           actaddr: this.applyForm.actaddr,
           acttime: new Date(this.applyForm.acttime),
-          dlytime: new Date(this.applyForm.dlytime),
+          deadline: new Date(this.applyForm.dlytime),
           actintro: this.applyForm.pubintro,
-          pubneeds: needs,
-          pubcontent: this.applyForm.pubcontent,
+          needs: needs,
+          content: this.applyForm.pubcontent,
           others: this.applyForm.pubothers
         }
       }

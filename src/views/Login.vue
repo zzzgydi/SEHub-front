@@ -73,15 +73,15 @@ export default {
       this.$refs.ruleForm.validate(valid => {
         if (valid) {
           apiLogin(res => {
-            if (res.jwt) {
-              console.log('jwt:', res.jwt)
+            if (res.code === 0) {
+              // console.log('jwt:', res.jwt)
               this.$store.commit('login')
               this.$router.push('/home')
-              sessionStorage.setItem('jwt', res.jwt)
+              sessionStorage.setItem('jwt', res.body.jwt)
             } else {
               console.log('login fail')
             }
-            console.log(res)
+            // console.log(res)
           })
           // Test API
           // this.axios

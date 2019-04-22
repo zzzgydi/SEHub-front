@@ -69,8 +69,8 @@ export default {
           actname: this.applyForm.actname,
           actaddr: this.applyForm.actaddr,
           acttime: new Date(this.applyForm.acttime),
-          etinum: this.applyForm.etinum + '人',
-          etiwork: this.applyForm.etiwork.join('；'),
+          number: this.applyForm.etinum,
+          work: this.applyForm.etiwork.join('；'),
           others: this.applyForm.others
         }
       }

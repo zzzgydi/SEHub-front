@@ -76,7 +76,7 @@ var homeData = {
 
 // 登录
 export function apiLogin (callback) {
-  let username = '201730683314'
+  let username = '201630666387'
   let password = '123456'
   let q = 'username=' + username + '&password=' + password
   // let yes = 'yes'

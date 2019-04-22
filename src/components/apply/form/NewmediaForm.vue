@@ -71,8 +71,8 @@ export default {
           actname: this.applyForm.actname,
           actaddr: this.applyForm.actaddr,
           acttime: new Date(this.applyForm.acttime),
-          newddl: this.applyForm.newddl,
-          newwork: this.applyForm.newwork.join('；'),
+          deadline: this.applyForm.newddl,
+          work: this.applyForm.newwork.join('；'),
           others: this.applyForm.newothers
         }
       }
