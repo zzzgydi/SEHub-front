@@ -17,9 +17,10 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    login (state) {
+    login(state, jwt) {
       state.isLogin = true
-      console.log('store login')
+      sessionStorage.setItem("jwt", jwt);
+      sessionStorage.setItem("selogin", true);
     }
   },
   actions: {

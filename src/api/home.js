@@ -89,10 +89,4 @@ export function apiLogin (callback) {
 // 首页获取所有活动
 export function apiGetActivities (callback) {
   callback(homeData)
-  // axios.get('http://127.0.0.1:8080')
-  //   .then(res => {
-  //     callback(res)
-  //   }).catch(err => {
-  //     console.log('Api Error:', err)
-  //   })
 }

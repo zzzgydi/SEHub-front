@@ -115,7 +115,7 @@ export default {
           type: 'activity',
           actname: this.applyForm.actname,
           actaddr: this.applyForm.actaddr,
-          acttime: this.applyForm.acttime + ' ' + this.applyForm.acttime_more,
+          // acttime: this.applyForm.acttime + ' ' + this.applyForm.acttime_more,
           acttime: new Date(this.applyForm.acttime_s),
           deadline: new Date(this.applyForm.acttime_e),
           actback: this.applyForm.actback,
